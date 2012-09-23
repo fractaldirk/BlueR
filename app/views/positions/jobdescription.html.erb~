@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Job title:</b>
+  <%= @position.job_title %>
+</p>
+
+
+<p>
+  <b>Job title:</b>
+  <%= @position.valid_from %>
+</p>
+
+
+<p>
+  <b>Job title:</b>
+  <%= @position.job_grade %>
+</p>
+<br />
+<%= link_to 'Edit', editme_position_path(@position) %> |
+<%= link_to 'Back', position %>
