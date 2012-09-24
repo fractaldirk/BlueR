@@ -7,15 +7,18 @@
 
 
 <p>
-  <b>Job title:</b>
+  <b>Valid from:</b>
   <%= @position.valid_from %>
 </p>
 
 
 <p>
-  <b>Job title:</b>
+  <b>Job grade:</b>
   <%= @position.job_grade %>
 </p>
+
+
+
 <br />
 <%= link_to 'Edit', editme_position_path(@position) %> |
 <%= link_to 'Back', @position %>

@@ -25,7 +25,8 @@ class PositionsController < ApplicationController
   # GET /positions/new.json
   def new
     @position = Position.new
-
+    1.times { @position.competencies.build }
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @position }
@@ -89,4 +90,23 @@ class PositionsController < ApplicationController
   def jobdescription
     @position = Position.find(params[:id])
   end
+
+  def personalprofile
+    @position = Position.find(params[:id])
+  end
+
+  def editpersonalprofile
+    @position = Position.find(params[:id])
+  end
+  
+  def competencies
+    @position = Position.find(params[:id])
+    
+  end
+
+  def editcompetencies
+    @position = Position.find(params[:id])
+    1.times { @position.competencies.build }
+  end
+
 end

@@ -12,6 +12,6 @@
  *= require_tree .
 */
 .pizza {
-  background-color:#66CCFF;
+  background-color:#0000FF;
 }
  

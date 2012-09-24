@@ -2,7 +2,7 @@ BlueRobin1::Application.routes.draw do
   resources :positions do
     member do
       get 'editme'
-      post 'jobdescription'
+      get 'jobdescription'
     end
   end
 

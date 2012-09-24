@@ -11,12 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923215333) do
+ActiveRecord::Schema.define(:version => 20120924132249) do
+
+  create_table "competencies", :force => true do |t|
+    t.string   "competencies"
+    t.integer  "competency_value"
+    t.integer  "competency_cpv"
+    t.integer  "position_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "competencies", ["position_id"], :name => "index_competencies_on_position_id"
 
   create_table "positions", :force => true do |t|
     t.string   "position_name"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "job_title"
     t.date     "valid_from"
     t.string   "job_grade"
@@ -25,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20120923215333) do
     t.text     "overall_purpose"
     t.text     "specific_work_env"
     t.text     "scope"
+    t.string   "name"
+    t.string   "photo"
+    t.text     "experience"
+    t.date     "date_birth"
+    t.integer  "gender"
+    t.integer  "marital_status"
+    t.integer  "children"
+    t.text     "personal_development"
   end
 
 end

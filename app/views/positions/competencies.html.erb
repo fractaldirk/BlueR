@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>List of competencies:</b>
+
+  <% @position.competencies.each do |competency| %>
+  <p><%= competency.competencies %></p>
+  <% end %>
+
+</p>
+
+
+
+
+
+<br />
+<%= link_to 'Edit', editcompetencies_position_path(@position) %> |
+<%= link_to 'Back', @position %>

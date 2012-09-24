@@ -1,0 +1,5 @@
+module ApplicationHelper
+  def link_to_add_fields
+    @position = Position.new(params[:job_grade])
+  end
+end

@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Job title:</b>
-  <%= @position.job_title %>
+  <b>Name:</b>
+  <%= @position.name %>
 </p>
 
 
 <p>
-  <b>Valid from:</b>
-  <%= @position.valid_from %>
+  <b>Date of Birth:</b>
+  <%= @position.date_birth %>
 </p>
 
 
@@ -20,5 +20,5 @@
 
 
 <br />
-<%= link_to 'Edit', editme_position_path(@position) %> |
+<%= link_to 'Edit', editpersonalprofile_position_path(@position) %> |
 <%= link_to 'Back', @position %>

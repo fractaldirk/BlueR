@@ -25,6 +25,18 @@
     <%= f.label :job_grade %><br />
     <%= f.text_field :job_grade %>
   </div>
+
+    <%= f.fields_for :competencies do |builder| %>
+  <fieldset>
+    <%= f.label :competencies %><br />
+    <%= builder.text_field :competencies %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "remove", '#', class: "remove_fields" %>
+    
+  </fieldset>
+    <%= link_to_add_fields "Add Answer", f, :competencies %>
+    <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

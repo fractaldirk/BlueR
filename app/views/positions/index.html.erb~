@@ -1,9 +1,9 @@
+<html>
 <h1>Listing positions</h1>
 
 <% @positions.each do |position| %>
   
     <li><%= link_to position.position_name, position %><br />
-    <td><%= link_to 'Show', position %></td>
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></li>
   </tr>
@@ -13,3 +13,4 @@
 <br />
 
 <%= link_to 'New Position', new_position_path %>
+</html>

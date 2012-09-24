@@ -12,19 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
+    <%= f.label :position_name %><br />
+    <%= f.text_field :position_name %>
   </div>
 
-  <div class="field">
-    <%= f.label :valid_from %><br />
-    <%= f.date_select(:valid_from, :order => [:day, :month, :year]) %>
-  </div>
+<%= f.fields_for :competencies do |builder| %>
+  <fieldset>
+    <%= builder.label :competencies, "Competency" %><br />
+    <%= builder.text_field :competencies %>
+  </fieldset>
+   <% end %>
 
-  <div class="field">
-    <%= f.label :job_grade %><br />
-    <%= f.text_field :job_grade %>
-  </div>
 
   <div class="actions">
     <%= f.submit %>

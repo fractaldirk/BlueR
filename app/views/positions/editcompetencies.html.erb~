@@ -11,21 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
-  </div>
 
-  <div class="field">
-    <%= f.label :valid_from %><br />
-    <%= f.date_select(:valid_from, :order => [:day, :month, :year]) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :job_grade %><br />
-    <%= f.text_field :job_grade %>
-  </div>
-
+ <%= f.fields_for :competencies do |builder| %>
+  <fieldset>
+    <%= builder.label :competencies %><br />
+    <%= builder.text_field :competencies %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "remove", '#', class: "remove_fields" %>
+    
+  </fieldset>
+    <%= link_to_add_fields "Add Competency", f, :competencies %>
+    <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
