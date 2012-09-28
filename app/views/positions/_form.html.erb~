@@ -11,20 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :position_name %><br />
-    <%= f.text_field :position_name %>
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#general" data-toggle="tab">General</a></li>
+  <li><a href="#jd" data-toggle="tab">Job Description</a></li>
+  <li><a href="#profile" data-toggle="tab">Personal Profile</a></li>
+  <li><a href="#competencies" data-toggle="tab">Competencies</a></li>
+  <li><a href="#helper" data-toggle="tab">Helper</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="general">
+    <%= render 'form_general', :f => f %>
   </div>
-
-<%= f.fields_for :competencies do |builder| %>
-  <fieldset>
-    <%= builder.label :competencies, "Competency" %><br />
-    <%= builder.text_field :competencies %>
-  </fieldset>
-   <% end %>
-
+  <div class="tab-pane" id="jd">
+    <%= render 'form_job_description', :f => f %>
+  </div>
+  <div class="tab-pane" id="profile">
+    <%= render 'form_personal_profile', :f => f %>
+  </div>
+  <div class="tab-pane" id="competencies">
+    <%= f.fields_for :competencies do |builder| %>
+    <%= render 'form_competencies', :f => f, :builder => builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Competency", f, :competencies %>
+  </div>
+  <div class="tab-pane" id="helper">...</div>
+</div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+

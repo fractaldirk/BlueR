@@ -4,13 +4,10 @@
   <b>List of competencies:</b>
 
   <% @position.competencies.each do |competency| %>
-    <%= competency.competencies %>
+  <p><%= competency.competencies %></p>
   <% end %>
 
 </p>
-
-
-
 
 
 <br />

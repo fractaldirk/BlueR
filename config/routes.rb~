@@ -3,6 +3,10 @@ BlueRobin1::Application.routes.draw do
     member do
       get 'editme'
       get 'jobdescription'
+      get 'personalprofile'
+      get 'editpersonalprofile'
+      get 'competencies'
+      get 'editcompetencies'
     end
   end
 

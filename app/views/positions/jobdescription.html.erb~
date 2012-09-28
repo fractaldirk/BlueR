@@ -13,8 +13,8 @@
 
 
 <p>
-  <b>Previous and current work experience:</b>
-  <%= simple_format @position.experience %>
+  <b>Job grade:</b>
+  <%= @position.job_grade %>
 </p>
 
 
@@ -22,3 +22,5 @@
 <br />
 <%= link_to 'Edit', editme_position_path(@position) %> |
 <%= link_to 'Back', @position %>
+
+

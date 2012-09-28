@@ -1,4 +1,3 @@
-<html>
 <h1>Listing positions</h1>
 
 <% @positions.each do |position| %>
@@ -13,4 +12,4 @@
 <br />
 
 <%= link_to 'New Position', new_position_path %>
-</html>
+

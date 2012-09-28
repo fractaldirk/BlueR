@@ -7,14 +7,5 @@
     <%= link_to '(Edit)', edit_position_path(@position) %> <hr />
 </center>
 
-  <div class="jd">
-    <%= link_to image_tag("Job Description.jpg", :border=>4), :action => 'jobdescription' %>
-
-    <%= link_to image_tag("Personal Profile.jpg", :border=>4), :action => 'competencies' %>
-
-    <%= link_to image_tag("competencies.jpg", :border=>4), :action => 'competencies' %>
-  </div>
-
-
 <hr />
     <%= link_to 'Back', positions_path %>

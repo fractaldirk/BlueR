@@ -82,11 +82,6 @@ class PositionsController < ApplicationController
     end
   end
   
-
-  def editme
-    @position = Position.find(params[:id])
-  end
-
   def jobdescription
     @position = Position.find(params[:id])
   end
@@ -94,19 +89,10 @@ class PositionsController < ApplicationController
   def personalprofile
     @position = Position.find(params[:id])
   end
-
-  def editpersonalprofile
-    @position = Position.find(params[:id])
-  end
   
   def competencies
     @position = Position.find(params[:id])
     
-  end
-
-  def editcompetencies
-    @position = Position.find(params[:id])
-    1.times { @position.competencies.build }
   end
 
 end

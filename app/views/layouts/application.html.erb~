@@ -4,9 +4,12 @@
   <title>BlueRobin1</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "accordion" %>
+  <%= javascript_include_tag "effects" %>
+  <%= javascript_include_tag "prototype" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="pizza">
 
 <%= yield %>
 
