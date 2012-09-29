@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924132249) do
+ActiveRecord::Schema.define(:version => 20120929230453) do
 
   create_table "competencies", :force => true do |t|
     t.string   "competencies"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20120924132249) do
     t.integer  "marital_status"
     t.integer  "children"
     t.text     "personal_development"
+    t.text     "conceptual"
+    t.text     "implementation"
+    t.text     "support"
+    t.string   "attitude1"
+    t.string   "attitude2"
+    t.string   "attitude3"
+    t.string   "attitude4"
+    t.string   "attitude5"
   end
 
 end

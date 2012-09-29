@@ -31,4 +31,7 @@ body {
 // Example:
 // @linkColor: #ff0000;
 
-
+.field_area {
+  width: 600pt;
+  height: 400pt;
+}
