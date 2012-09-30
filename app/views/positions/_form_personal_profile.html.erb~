@@ -9,7 +9,7 @@
       <div class="accordion-inner">
         <div class="field">
 	  <%= f.label :name %><br />
-    	  <%= f.text_field :name %>
+    	  <%= f.text_field :name, :class => 'gender' %>
         </div>
   
   	<div class="field">
@@ -24,7 +24,7 @@
 
   	<div class="field">
     	  <%= f.label :gender %><br />
-    	  <%= f.select(:gender, [['Female', '1'], ['Male', '2']], :prompt => 'Please select') %>
+    	  <%= f.select(:gender, [['Female', '1'], ['Male', '2']], :prompt => 'Please select'), :class => 'inputgender' %>
   	</div>
 
   	<div class="field">
@@ -54,7 +54,7 @@
       <div class="accordion-inner">
         <div class="field">
     	  <%= f.label :personal_development, "Personal Development Notes" %><br />
-    	  <%= f.text_area :personal_development %>
+    	  <%= f.text_area :personal_development, :style => "width: 600pt;" "height: 250pt;" %>
   	</div>
       </div>
     </div>

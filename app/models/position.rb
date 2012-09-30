@@ -6,5 +6,6 @@ attr_accessible :position_name, :job_title, :valid_from, :job_grade, :reports_to
 		:office, :unique_position, :fte, :permanent
 has_many :competencies 
 accepts_nested_attributes_for :competencies
+
 end
 

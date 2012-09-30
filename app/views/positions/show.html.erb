@@ -7,32 +7,18 @@
     <%= link_to '(Edit)', edit_position_path(@position) %> <hr />
 </center>
 
-<div class="accordion" id="accordion2">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-        Collapsible Group Item #1
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-        Collapsible Group Item #2
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        Anim pariatur cliche...
-      </div>
-    </div>
-  </div>
-</div>
+<ul class="thumbnails">
+  <li class="span4">
+   <%= link_to image_tag("jobdescriptionthumbnail.jpg"), {:action => 'jobdescription'}, :class => 'thumbnail' %>
+  </li>
+  <li class="span4">
+    <%= link_to image_tag("http://placehold.it/300x200"), {:action => 'personalprofile'}, :class => 'thumbnail' %>
+  </li>
+  <li class="span4">
+    <%= link_to image_tag("http://placehold.it/300x200"), {:action => 'competencies'}, :class => 'thumbnail' %>
+  </li>
+</ul>
 
 <hr />
     <%= link_to 'Back', positions_path %>
+    <%= link_to 'Back', jobdescription_position_path %>

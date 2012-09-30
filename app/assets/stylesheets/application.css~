@@ -20,6 +20,12 @@
   background-color:#900000;
   color:#FFFFFF;
 }
+
+.hrpicture {
+  position:relative;
+  top:30px;
+  right:5px;
+}
  
 
 
