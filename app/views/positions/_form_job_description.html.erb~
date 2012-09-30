@@ -126,11 +126,11 @@
   </div>
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEight">
         Attitude/Characteristics
       </a>
     </div>
-    <div id="collapseSeven" class="accordion-body collapse">
+    <div id="collapseEight" class="accordion-body collapse">
       <div class="accordion-inner">
         <div class="field">
     	  <%= f.label :attitude1, "Please list preferred characteristics" %><br />
