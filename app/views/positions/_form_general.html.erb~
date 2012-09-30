@@ -1,7 +1,22 @@
-<div>
-  <h2>Includes the following:</h2>
-  <ul>
-  <li>Which office? List of fixed options (:new zealand, :GPI, :UK), field = integer</li>
-  <li>Unique Position? If not, (so if value 2 for example), render new field to assign number of vacancies within position (make open option integer)</li>
-  </ul>
-</div>
+  <div class="field">
+    <%= f.label :office, "To which office belongs this position?" %><br />
+    <%= f.select(:office, [['International','1'], ['United Kingdom','2'], ['Netherlands', '3']], :prompt => 'Select office') %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :unique_position, "Is this a unique position or can it be filled by multiple persons?" %><br />
+    <%= f.select(:unique_position, [['Yes', 'True'], ['No', 'False']], :prompt => 'Please select') %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fte, "How many FTE requires this position?" %><br />
+    <%= f.select(:fte, [['Full time (1)', '1.00'], ['0.75', '0.75'], ['Half (0.5)', '0.50'], ['0.25', '0.25']], :prompt => 'Please define') %>
+  </div>
+
+  <div class="field">
+    <%= f.label :permanent, "Is this a permanent position?" %><br />
+    <%= f.select(:permanent, [['Permanent', 'Yes'], ['Temporarily', 'No']], :prompt => 'Please define') %>
+  </div>
+
+
+

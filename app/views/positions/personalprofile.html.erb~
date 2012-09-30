@@ -1,8 +1,14 @@
+<body class="redie">
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
   <%= @position.name %>
+</p>
+
+<p>
+  <b>HR Picture:</b>
+  <%= link_to image_tag(@position.picture + ".png", :border=>4) %>
 </p>
 
 
@@ -20,5 +26,7 @@
 
 
 <br />
-<%= link_to 'Edit', editpersonalprofile_position_path(@position) %> |
+<%= link_to 'Edit', edit_position_path(@position) %> |
 <%= link_to 'Back', @position %>
+
+</body>

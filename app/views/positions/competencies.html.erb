@@ -1,13 +1,27 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
 
-<p>
-  <b>List of competencies:</b>
-
-  <% @position.competencies.each do |competency| %>
-  <p><%= competency.competencies %></p>
-  <% end %>
-
-</p>
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Competency</th>
+        <th>Competency Importance</th>
+        <th>Requested Profiency Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><% for competency in @position.competencies %>
+            <p><%=h competency.competencies %></p>
+            <% end %></td>
+        <td><% for competency in @position.competencies %>
+            <p><%=h competency.competency_cpv %></p>
+            <% end %></td>
+        <td><% for competency in @position.competencies %>
+            <p><%=h competency.competency_value %></p>
+            <% end %></td>
+      </tr>
+    </tbody>
+</table>
 
 
 <br />
