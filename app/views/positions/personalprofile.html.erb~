@@ -14,14 +14,18 @@
 
 <p>
   <b>Gender:</b>
-  <%= @position.gender %>
+  <%= @position.gender_string %>
 </p>
 
 <p>
   <b>Nationality:</b>
-  <%= @position.genderoutput %>
+  <%= @position.nationality_string %>
 </p>
 
+<p>
+  <b>Residential Status:</b>
+  <%= @position.residential_status_string %>
+</p>
 
 <p>
   <b>Previous and current work experience:</b>

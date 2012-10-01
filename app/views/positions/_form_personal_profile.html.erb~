@@ -9,7 +9,7 @@
       <div class="accordion-inner">
         <div class="field">
 	  <%= f.label :name %><br />
-    	  <%= f.text_field :name, :class => 'gender' %>
+    	  <%= f.text_field :name %>
         </div>
   
   	<div class="field">
@@ -23,23 +23,23 @@
   	</div>
 
   	<div class="field">
-    	  <%= f.label :gender %><br />
-    	  <%= f.select(:gender, [['Female', '1'], ['Male', '2']], :prompt => 'Please select'), :class => 'inputgender' %>
+    	  <%= f.label :gender_string %><br />
+    	  <%= f.select(:gender_string, [['Female', 'Female'], ['Male', 'Male']], :prompt => 'Please select') %>
   	</div>
 
   	<div class="field">
-    	  <%= f.label :nationality %><br />
-    	  <%= f.select(:nationality, [['Dutch', '1'], ['German', '2']], :prompt => 'Please select') %>
+    	  <%= f.label :nationality_string %><br />
+    	  <%= f.select(:nationality_string, [['Dutch', 'Dutch'], ['German', 'German']], :prompt => 'Please select') %>
   	</div>
 
   	<div class="field">
-    	  <%= f.label :residential_status %><br />
-    	  <%= f.select(:residential_status, [['Residential Status', '1'], ['(Visa', '2']], :prompt => 'Please select') %>
+    	  <%= f.label :residential_status_string %><br />
+    	  <%= f.select(:residential_status_string, [['Permanent Residence Status', 'Permanent Residence Status'], ['Visa', 'Visa']], :prompt => 'Please select') %>
   	</div>
 
   	<div class="field">
     	  <%= f.label :start_date %><br />
-    	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
+    	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :start_year => 1972, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
   	</div>
       </div>
     </div>

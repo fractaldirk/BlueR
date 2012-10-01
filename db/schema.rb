@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120930165033) do
+ActiveRecord::Schema.define(:version => 20121001115520) do
 
   create_table "competencies", :force => true do |t|
     t.string   "competencies"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20120930165033) do
 
   create_table "positions", :force => true do |t|
     t.string   "position_name"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "job_title"
     t.date     "valid_from"
     t.string   "job_grade"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(:version => 20120930165033) do
     t.boolean  "unique_position"
     t.decimal  "fte"
     t.boolean  "permanent"
+    t.string   "nationality_string"
+    t.string   "gender_string"
+    t.string   "residential_status_string"
   end
 
 end
