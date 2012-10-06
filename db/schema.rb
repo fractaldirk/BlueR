@@ -11,18 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001115520) do
+ActiveRecord::Schema.define(:version => 20121006210142) do
 
   create_table "competencies", :force => true do |t|
     t.string   "competencies"
     t.integer  "competency_value"
     t.integer  "competency_cpv"
     t.integer  "position_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "competency_options"
   end
 
   add_index "competencies", ["position_id"], :name => "index_competencies_on_position_id"
+
+  create_table "m_competencies", :force => true do |t|
+    t.string   "mcompetencies"
+    t.integer  "mcompetency_value"
+    t.integer  "mcompetency_cpv"
+    t.integer  "position_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "m_competencies", ["position_id"], :name => "index_m_competencies_on_position_id"
 
   create_table "positions", :force => true do |t|
     t.string   "position_name"
@@ -64,5 +76,16 @@ ActiveRecord::Schema.define(:version => 20121001115520) do
     t.string   "gender_string"
     t.string   "residential_status_string"
   end
+
+  create_table "socials", :force => true do |t|
+    t.string   "social_name"
+    t.integer  "social_cpv"
+    t.integer  "social_value"
+    t.integer  "position_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "socials", ["position_id"], :name => "index_socials_on_position_id"
 
 end

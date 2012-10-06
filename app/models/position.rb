@@ -5,7 +5,6 @@ attr_accessible :position_name, :job_title, :valid_from, :job_grade, :reports_to
 		:support, :gender_string, :personal_development, :nationality_string, :residential_status_string, :start_date,
 		:office, :unique_position, :fte, :permanent
 has_many :competencies 
-accepts_nested_attributes_for :competencies
-
+accepts_nested_attributes_for :competencies, allow_destroy: true
 end
 

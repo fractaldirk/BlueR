@@ -92,7 +92,17 @@ class PositionsController < ApplicationController
   
   def competencies
     @position = Position.find(params[:id])
-    
   end
 
+  def editjobdescription
+   @position = Position.find(params[:id])
+  end
+
+  def editcompetencies
+   @position = Position.find(params[:id])
+  end
+
+  def editpersonalprofile
+   @position = Position.find(params[:id])
+  end
 end

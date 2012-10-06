@@ -1,29 +1,19 @@
 <p id="notice"></p>
 
-<table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Competency</th>
-        <th>Competency Importance</th>
-        <th>Requested Profiency Level</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><% for competency in @position.competencies %>
-            <p><%=h competency.competencies %></p>
-            <% end %></td>
-        <td><% for competency in @position.competencies %>
-            <p><%=h competency.competency_cpv %></p>
-            <% end %></td>
-        <td><% for competency in @position.competencies %>
-            <p><%=h competency.competency_value %></p>
-            <% end %></td>
-      </tr>
-    </tbody>
-</table>
-
+<ul class="nav nav-tabs" id="Tab6">
+  <li class="active"><a href="#jobcompetencies" data-toggle="tab">Job related competencies</a></li>
+  <li><a href="#personalcompetencies" data-toggle="tab">Personal Competencies</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="jobcompetencies">
+    <%= render 'competenciestab1' %>
+  </div>
+  <div class="tab-pane" id="personalcompetencies">
+    <%= render 'competenciestab2' %>
+  </div>
+</div>
 
 <br />
-<%= link_to 'Edit', edit_position_path(@position) %> |
+<%= link_to 'Edit', editcompetencies_position_path(@position) %> |
 <%= link_to 'Back', @position %>

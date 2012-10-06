@@ -28,8 +28,8 @@
 </p>
 
 <p>
-  <b>Previous and current work experience:</b>
-  <%= simple_format @position.experience %>
+  <b>Personal Development Notes:</b>
+  <%= simple_format @position.personal_development %>
 </p>
 
 

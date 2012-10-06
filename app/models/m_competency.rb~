@@ -1,0 +1,3 @@
+class MCompetency < ActiveRecord::Base
+  belongs_to :competency
+end

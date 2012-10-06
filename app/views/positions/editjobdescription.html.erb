@@ -14,8 +14,8 @@
 
 <ul class="nav nav-tabs" id="myTab">
   <li><a href="#general" data-toggle="tab">General</a></li>
-  <li><a href="#jd" data-toggle="tab">Job Description</a></li>
-  <li class="active"><a href="#profile" data-toggle="tab">Personal Profile</a></li>
+  <li class="active"><a href="#jd" data-toggle="tab">Job Description</a></li>
+  <li><a href="#profile" data-toggle="tab">Personal Profile</a></li>
   <li><a href="#competencies" data-toggle="tab">Competencies</a></li>
   <li><a href="#helper" data-toggle="tab">Helper</a></li>
 </ul>
@@ -24,10 +24,10 @@
   <div class="tab-pane" id="general">
     <%= render 'form_general', :f => f %>
   </div>
-  <div class="tab-pane" id="jd">
+  <div class="tab-pane active" id="jd">
     <%= render 'form_job_description', :f => f %>
   </div>
-  <div class="tab-pane active" id="profile">
+  <div class="tab-pane" id="profile">
     <%= render 'form_personal_profile', :f => f %>
   </div>
   <div class="tab-pane" id="competencies">
@@ -44,4 +44,5 @@
   </div>
 <% end %>
 <br />
-<%= link_to "Back", personalprofile_position_path %>|
+<%= link_to 'Back', jobdescription_position_path %> |
+

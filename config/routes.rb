@@ -4,6 +4,9 @@ BlueRobin1::Application.routes.draw do
       get 'jobdescription'
       get 'personalprofile'
       get 'competencies'
+      get 'editjobdescription'
+      get 'editcompetencies'
+      get 'editpersonalprofile'
     end
   end
 
