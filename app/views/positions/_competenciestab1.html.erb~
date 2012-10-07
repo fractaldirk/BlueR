@@ -1,3 +1,6 @@
+<% for competency in @position.competencies %>
+  <% if competency.competency_options == "F" %>
+    <% unless @position.competencies.empty? %>
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -20,8 +23,14 @@
       </tr>
     </tbody>
 </table>
+    <% end %>
+  <% end %>
+<% end %>
 
 
+<% for competency in @position.competencies %>
+  <% if competency.competency_options == "M" %>
+    <% unless @position.competencies.empty? %>
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -44,8 +53,14 @@
       </tr>
     </tbody>
 </table>
+    <% end %>
+  <% end %>
+<% end %>
 
 
+<% for competency in @position.competencies %>
+  <% if competency.competency_options == "S" %>
+    <% unless @position.competencies.empty? %>
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -68,8 +83,14 @@
       </tr>
     </tbody>
 </table>
+    <% end %>
+  <% end %>
+<% end %>
 
 
+<% for competency in @position.competencies %>
+  <% if competency.competency_options == "L" %>
+    <% unless @position.competencies.empty? %>
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -92,3 +113,6 @@
       </tr>
     </tbody>
 </table>
+    <% end %>
+  <% end %>
+<% end %>

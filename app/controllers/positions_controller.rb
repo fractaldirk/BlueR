@@ -3,7 +3,7 @@ class PositionsController < ApplicationController
   # GET /positions.json
   def index
     @positions = Position.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @positions }

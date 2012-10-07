@@ -1,3 +1,8 @@
+<% for competency in @position.competencies %>
+  <% if competency.competency_options == "P" %>
+    <% unless @position.competencies.empty? %>
+
+
 <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -8,15 +13,18 @@
     </thead>
     <tbody>
       <tr>
-        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "P" %>
+        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "P" %><% unless @position.competencies.empty? %>
             <p style = "height: 10pt"><%= competency.competencies %></p><hr />
-            <% end %><% end %></td>
-        <td><% for competency in @position.competencies %><% if competency.competency_options == "P" %>
+            <% end %><% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "P" %><% unless @position.competencies.empty? %>
             <p style = "height: 10pt" align="middle"><%=h competency.competency_cpv %></p><hr />
-            <% end %><% end %></td>
-        <td><% for competency in @position.competencies %><% if competency.competency_options == "P" %>
+            <% end %><% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "P" %><% unless @position.competencies.empty? %>
             <p style = "height: 10pt" align="middle"><%=h competency.competency_value %></p><hr />
-            <% end %><% end %></td>
+            <% end %><% end %><% end %></td>
       </tr>
     </tbody>
 </table>
+    <% end %>
+  <% end %>
+<% end %>

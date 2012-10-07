@@ -1,17 +1,58 @@
 <body class="pizza">
-<h1>Listing positions</h1>
 
-<% @positions.each do |position| %>
-  
-    <li><%= link_to position.job_title, position %><br />
-    <td><%= link_to 'Edit', edit_position_path(position) %></td>
-    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></li>
-  </tr>
-<% end %>
+<p class="logotextindex"><%= link_to image_tag("bluerobintext.png", :border=>4) %></p>
+
+
+<h1>Listing positions</h1><br />
+  <%= link_to 'New Position', new_position_path %>
+<hr />
+
+<table class="table table-bordered table-striped">	
+    <thead>
+      <tr>
+        <td width="250pt">
+            Job Title
+            </td>
+        <td width="150pt">
+            Start date
+            </td>
+        <td width="150pt">
+            Filled by?
+            </td>
+	<td width="150pt">
+            Edit?
+            </td>
+	<td width="150pt">
+            Destroy?
+            </td>
+      </tr>
+    </head>
 </table>
 
-<br />
+<% @positions.each do |position| %>
 
-<%= link_to 'New Position', new_position_path %>
+<table class="table table-bordered table-striped">	
+    <tbody>
+      <tr>
+        <td width="250pt">
+            <%= link_to position.job_title, position %>
+            </td>
+        <td width="150pt">
+            <%= position.start_date %>
+            </td>
+        <td width="150pt">
+            <%= link_to position.name, personalprofile_position_path(position) %>
+            </td>
+	<td width="150pt">
+            <%= link_to 'Edit', edit_position_path(position) %>
+            </td>
+	<td width="150pt">
+            <%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %>
+            </td>
+      </tr>
+    </body>
+</table>
+
+<% end %>
 
 </body>
