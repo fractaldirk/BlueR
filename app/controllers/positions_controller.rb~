@@ -2,6 +2,7 @@ class PositionsController < ApplicationController
   # GET /positions
   # GET /positions.json
   def index
+    @search = Position.search(params[:q])
     @positions = Position.all
     
     respond_to do |format|
@@ -45,8 +46,8 @@ class PositionsController < ApplicationController
 
     respond_to do |format|
       if @position.save
-        format.html { redirect_to positions_index, notice: 'Position was successfully created.' }
-        format.json { render json: positions_index, status: :created, location: @position }
+        format.html { redirect_to positions_path, notice: 'Position was successfully created.' }
+        format.json { render json: positions_path, status: :created, location: @position }
       else
         format.html { render action: "new" }
         format.json { render json: @position.errors, status: :unprocessable_entity }

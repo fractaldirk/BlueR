@@ -6,19 +6,26 @@
 <h1>Listing positions</h1><br />
   <%= link_to 'New Position', new_position_path %>
 <hr />
-
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :job_title_cont, "Job title contains" %><br />
+      <%= f.text_field :job_title_cont %>
+    </div>
+    <div class="action"><%= f.submit "Search" %></div>
+  <% end %>
+<hr />
 <table class="table table-bordered table-striped">	
   <tr>
-    <th>Job title</th>
-    <th>Start date</th>
-    <th>Filled by</th>
-    <th>Filled by</th>
-    <th>Filled by</th>
+    <th><%= sort_link @search, :job_title, "Job title" %></th>
+    <th><%= sort_link @search, :department, "Department" %></th>
+    <th><%= sort_link @search, :name, "Name" %></th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
 <% @positions.each do |position| %>
   <tr>
     <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
-    <td><%= position.start_date %></td>
+    <td><%= position.department %></td>
     <td><%= link_to position.name, personalprofile_position_path(position) %></td>
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>

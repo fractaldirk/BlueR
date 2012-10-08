@@ -1,4 +1,9 @@
   <div class="field">
+   <%= f.label :job_title %><br />
+   <%= f.text_field :job_title %>
+  </div>
+
+  <div class="field">
     <%= f.label :office, "To which office belongs this position?" %><br />
     <%= f.select(:office, [['International','1'], ['United Kingdom','2'], ['Netherlands', '3']], :prompt => 'Select office') %>
   </div>

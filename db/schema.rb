@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006210142) do
+ActiveRecord::Schema.define(:version => 20121008104943) do
 
   create_table "competencies", :force => true do |t|
     t.string   "competencies"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20121006210142) do
     t.string   "nationality_string"
     t.string   "gender_string"
     t.string   "residential_status_string"
+    t.string   "department"
   end
 
   create_table "socials", :force => true do |t|

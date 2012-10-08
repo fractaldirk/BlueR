@@ -9,6 +9,11 @@
   </div>
   
   <div class="field">
+   <%= f.label :department %><br />
+   <%= f.text_field :department %>
+  </div>
+  
+  <div class="field">
     <%= f.label :unique_position, "Is this a unique position or can it be filled by multiple persons?" %><br />
     <%= f.select(:unique_position, [['Yes', 'True'], ['No', 'False']], :prompt => 'Please select') %>
   </div>

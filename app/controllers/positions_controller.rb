@@ -2,7 +2,8 @@ class PositionsController < ApplicationController
   # GET /positions
   # GET /positions.json
   def index
-    @positions = Position.all
+    @search = Position.search(params[:q])
+    @positions = @search.result
     
     respond_to do |format|
       format.html # index.html.erb
