@@ -8,51 +8,22 @@
 <hr />
 
 <table class="table table-bordered table-striped">	
-    <thead>
-      <tr>
-        <td width="250pt">
-            Job Title
-            </td>
-        <td width="150pt">
-            Start date
-            </td>
-        <td width="150pt">
-            Filled by?
-            </td>
-	<td width="150pt">
-            Edit?
-            </td>
-	<td width="150pt">
-            Destroy?
-            </td>
-      </tr>
-    </head>
-</table>
-
+  <tr>
+    <th>Job title</th>
+    <th>Start date</th>
+    <th>Filled by</th>
+    <th>Filled by</th>
+    <th>Filled by</th>
+  </tr>
 <% @positions.each do |position| %>
-
-<table class="table table-bordered table-striped">	
-    <tbody>
-      <tr>
-        <td width="250pt">
-            <%= link_to position.job_title, jobdescription_position_path(position) %>
-            </td>
-        <td width="150pt">
-            <%= position.start_date %>
-            </td>
-        <td width="150pt">
-            <%= link_to position.name, personalprofile_position_path(position) %>
-            </td>
-	<td width="150pt">
-            <%= link_to 'Edit', edit_position_path(position) %>
-            </td>
-	<td width="150pt">
-            <%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %>
-            </td>
-      </tr>
-    </body>
-</table>
-
+  <tr>
+    <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
+    <td><%= position.start_date %></td>
+    <td><%= link_to position.name, personalprofile_position_path(position) %></td>
+    <td><%= link_to 'Edit', edit_position_path(position) %></td>
+    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
 <% end %>
+</table>
 
 </body>
