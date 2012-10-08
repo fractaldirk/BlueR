@@ -134,11 +134,11 @@
       <div class="accordion-inner">
         <div class="field">
     	  <%= f.label :attitude1, "Please list preferred characteristics" %><br />
-    	  <%= f.text_field :attitude1, :style => "width: 600pt;" %>
-	  <%= f.text_field :attitude2, :style => "width: 600pt;" %>
-     	  <%= f.text_field :attitude3, :style => "width: 600pt;" %>
-	  <%= f.text_field :attitude4, :style => "width: 600pt;" %>
-   	  <%= f.text_field :attitude5, :style => "width: 600pt;" %>
+    	  <%= f.text_field :attitude1, :style => "width: 600pt;", :class => 'attitude' %>
+	  <%= f.text_field :attitude2, :style => "width: 600pt;", :class => 'attitude' %>
+     	  <%= f.text_field :attitude3, :style => "width: 600pt;", :class => 'attitude' %>
+	  <%= f.text_field :attitude4, :style => "width: 600pt;", :class => 'attitude' %>
+   	  <%= f.text_field :attitude5, :style => "width: 600pt;", :class => 'attitude' %>
   	</div>
       </div>
     </div>

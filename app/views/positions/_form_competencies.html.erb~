@@ -2,7 +2,7 @@
   <%= builder.text_field :competencies, :style => "width: 600pt;", :class => 'competency' %>
   <%= builder.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
   <%= builder.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
-  <%= builder.select(:competency_options, [['F'],['M'],['L'],['P']], { :prompt => "TBD"}, :style => "width: 40pt;")
+  <%= builder.select(:competency_options, [['F'],['M'],['L'],['P']], { :prompt => "TBD"}, :style => "width: 40pt;") %>
   <%= builder.hidden_field :_destroy %>
   <%= link_to "remove", '#', class: "remove_fields" %>
 </fieldset>
