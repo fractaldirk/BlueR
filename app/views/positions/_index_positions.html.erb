@@ -1,0 +1,40 @@
+<h1>Listing positions</h1><br />
+
+<%= link_to 'New Position', new_position_path %>
+<hr />
+<%= search_form_for @search do |f| %>
+<table class="table table-bordered ">
+  <tr>
+    <th>Search by</th>
+    <th>Search field</th>
+  </tr>
+  <tr>
+    <td style="width: 90pt"><%= f.label :job_title_cont, "Job title" %></td>
+    <td style="width: 100pt"><%= f.text_field :job_title_cont %></td>
+    <td><div class="action"><%= f.submit "Search" %></div></td>
+  </tr>
+</table>
+<% end %>
+
+<hr />
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th><%= sort_link @search, :job_title, "Job title" %></th>
+    <th><%= sort_link @search, :department, "Department" %></th>
+    <th><%= sort_link @search, :valid_from, "Valid from" %></th>
+    <th><%= sort_link @search, :status, "Status" %></th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+    <% @positions.each do |position| %>
+  <tr>
+    <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
+    <td><%= position.department %></td>
+    <td><%= position.valid_from.strftime("%d %B %Y") unless position.valid_from.nil? %></td>
+    <td><%= position.status %></td>
+    <td><%= link_to 'Edit', edit_position_path(position) %></td>
+    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+    <% end %>
+</table>

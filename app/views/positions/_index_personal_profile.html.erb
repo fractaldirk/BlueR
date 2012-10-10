@@ -1,0 +1,37 @@
+<h1>Listing profiles</h1><br />
+
+<hr />
+<%= search_form_for @search do |f| %>
+<table class="table table-bordered ">
+  <tr>
+    <th>Search by</th>
+    <th>Search field</th>
+  </tr>
+  <tr>
+    <td style="width: 90pt"><%= f.label :name_cont, "Name" %></td>
+    <td style="width: 100pt"><%= f.text_field :name_cont %></td>
+    <td><div class="action"><%= f.submit "Search" %></div></td>
+  </tr>
+</table>
+<% end %>
+
+<hr />
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th><%= sort_link @search, :name, "Name" %></th>
+    <th><%= sort_link @search, :start_date, "Start Date" %></th>
+    <th><%= sort_link @search, :status, "Status" %></th>
+    <th><%= sort_link @search, :department, "Department" %></th>
+    <th>Edit</th>
+  </tr>
+    <% @positions.each do |position| %>
+  <tr>
+    <td><%= link_to position.name, personalprofile_position_path(position) %></td>
+    <td><%= position.start_date %></td>
+    <td>status (like pf)</td>
+    <td><%= position.department %></td>
+    <td><%= link_to 'Edit', edit_position_path(position) %></td>
+  </tr>
+    <% end %>
+</table>

@@ -1,0 +1,11 @@
+# Load the rails application
+require File.expand_path('../application', __FILE__)
+
+# Initialize the rails application
+BlueRobin1::Application.initialize!
+
+ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS
+  :default => '%m/%d/%Y',
+  :date_time12  => "%m/%d/%Y %I:%M%p",
+  :date_time24  => "%m/%d/%Y %H:%M",
+)

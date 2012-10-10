@@ -14,19 +14,13 @@
 .pizza {
   background-color:#66CCFF;
 }
- 
+
+.pizza2 {
+  background-color:#3399CC;
+}
+
 
 .redie {
   background-color:#900000;
   color:#FFFFFF;
 }
-
-.hrpicture {
-  position:relative;
-  top:30px;
-  right:5px;
-}
- 
-
-
-
