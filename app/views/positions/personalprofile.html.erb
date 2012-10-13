@@ -1,41 +1,23 @@
 <body class="redie">
-<p id="notice"></p>
-<p class="hrpicture"><%= link_to image_tag(@position.picture + ".png", :border=>4) %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @position.name %>
-</p>
-
-<p>
-  <b>Date of Birth:</b>
-  <%= @position.date_birth %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @position.gender_string %>
-</p>
-
-<p>
-  <b>Nationality:</b>
-  <%= @position.nationality_string %>
-</p>
-
-<p>
-  <b>Residential Status:</b>
-  <%= @position.residential_status_string %>
-</p>
-
-<p>
-  <b>Personal Development Notes:</b>
-  <%= simple_format @position.personal_development %>
-</p>
-
-
-
-<br />
-<%= link_to 'Edit', editpersonalprofile_position_path(@position) %> |
-<%= link_to 'Back', @position %>
+  <div id="personalprofilecarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#personalprofilecarousel" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <%= render "personal_profile" %>
+          </div>
+          <div class="item">
+            <%= render "personal_profile_nav" %>
+          </div>
+        </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#personalprofilecarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  </div>
 
 </body>

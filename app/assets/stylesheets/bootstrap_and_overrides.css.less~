@@ -56,8 +56,8 @@ ul.ui-autocomplete {
 
 .hrpicture {
   position:fixed;
-  top:15px;
-  right:15px;
+  top:40px;
+  right:50px;
 }
 
 .logoindex {
@@ -76,4 +76,10 @@ ul.ui-autocomplete {
   position:fixed;
   top:125px;
   left:10px;
+}
+
+#carouselright {
+  position:fixed;
+  top:125px;
+  right:10px;
 }

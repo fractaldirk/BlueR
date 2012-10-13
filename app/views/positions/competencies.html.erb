@@ -1,19 +1,23 @@
-<p id="notice"></p>
+<body class="">
 
-<ul class="nav nav-tabs" id="Tab6">
-  <li class="active"><a href="#jobcompetencies" data-toggle="tab">Job related competencies</a></li>
-  <li><a href="#personalcompetencies" data-toggle="tab">Personal Competencies</a></li>
-</ul>
- 
-<div class="tab-content">
-  <div class="tab-pane active" id="jobcompetencies">
-    <%= render 'competenciestab1' %>
+  <div id="competenciescarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#competenciescarousel" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <%= render "competencies_competencies" %>
+          </div>
+          <div class="item">
+            <%= render "competencies_nav" %>
+          </div>
+        </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#competenciescarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
   </div>
-  <div class="tab-pane" id="personalcompetencies">
-    <%= render 'competenciestab2' %>
-  </div>
-</div>
 
-<br />
-<%= link_to 'Edit', editcompetencies_position_path(@position) %> |
-<%= link_to 'Back', @position %>
+</body>

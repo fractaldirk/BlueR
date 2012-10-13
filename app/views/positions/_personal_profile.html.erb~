@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="span7">
+    <p>
+      <b>Name:</b>
+      <%= @position.name %>
+    </p>
+
+    <p>
+      <b>Date of Birth:</b>
+      <%= @position.date_birth %>
+    </p>
+
+    <p>
+      <b>Gender:</b>
+      <%= @position.gender_string %>
+    </p>
+
+    <p>
+      <b>Nationality:</b>
+      <%= @position.nationality_string %>
+    </p>
+
+    <p>
+      <b>Residential Status:</b>
+      <%= @position.residential_status_string %>
+    </p>
+  </div>
+  <div class="span3">
+    <p><%= link_to image_tag(@position.picture + ".png", :border=>4) %></p>
+  </div>
+</div>
+
+<p>
+  <b>Personal Development Notes:</b>
+  <%= simple_format @position.personal_development %>
+</p>
+
+
+
+<br />
+<%= link_to 'Edit', editpersonalprofile_position_path(@position) %> |
+<%= link_to 'Back', @position %>

@@ -1,75 +1,23 @@
-<p id="notice"></p>
+<body id="jobdescription" onload=""}>
 
-<h2>Job Description</h2>
+  <div id="jobdescriptioncarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#jobdescriptioncarousel" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <%= render "jobdescription_jd" %>
+          </div>
+          <div class="item">
+            <%= render "jobdescription_nav" %>
+          </div>
+        </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#jobdescriptioncarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  </div>
 
-<dl class="dl-horizontal">
-  <dt><strong>Job title:</strong></dt>
-  <dd><strong><%= @position.job_title %></strong></dd>
-  <dt>Valid from:</dt>
-  <dd><%= @position.valid_from %></dd>
-  <dt>Job grade:</dt>
-  <dd><%= @position.job_grade %></dd>
-  <dt>Reports to:</dt>
-  <dd><%= @position.reports_to %></dd>
-  <dt>Line manages:</dt>
-  <dd><%= @position.line_manages %></dd>
-</dl>
-
-<hr />
-<p><h3>OVERALL PURPOSE OF JOB</h3></p>
-  <%= simple_format @position.overall_purpose %>
-<br />
-
-<p><h3>SCOPE</h3></p>
-  <%= simple_format @position.scope %>
-<br />
-
-<p><h3>MAJOR FUNCTIONS / RESPONSIBILITIES</h3></p>
-<b><u>Conceptual tasks, Strategy Development and/or Project Development</u></b>
-  <%= simple_format @position.conceptual %>
-
-<b><u>Implementation</u></b>
-  <%= simple_format @position.implementation %>
-
-<b><u>Support/Coaching/Leadership</u></b>
-  <%= simple_format @position.support %>
-<br />
-
-<p><h3>COMPETENCY PROFILE</h3></p>
-<br />
-
- <b><u>Organisational competencies</u></b><br /> 
-  <li>Professionalism</li>
-  <li>Achievement</li>
-  <li>Interpersonal relationship</li>
-  <li>Knowlegde sharing</li>
-  <li>values diversity</li>
-  <li>Innovation</li>
-<br />
-
-<b><u>Job related competencies</u></b>
-<p>
-<% for competency in @position.competencies %>
-  <li><%=h competency.competencies %></li>
-<% end %>
-</p>
-
-<p><h3>ATTITUDE</h3></p>
-  <li><%= @position.attitude1 %></li>
-  <li><%= @position.attitude2 %></li>
-  <li><%= @position.attitude3 %></li>
-  <li><%= @position.attitude4 %></li>
-  <li><%= @position.attitude5 %></li>
-<br />
-
-<p><h3>SPECIFIC WORK ENVIRONMENT</h3></p>
-  <%= simple_format @position.specific_work_env %>
-<br />
-
-
-
-<br />
-<%= link_to 'Edit', edit_position_path(@position) %> |
-<%= link_to 'Back', @position %>
-
-
+</body>
