@@ -1,4 +1,6 @@
 BlueRobin1::Application.routes.draw do
+  resources :posts
+
   resources :positions do
     member do
       get 'jobdescription'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008104943) do
+ActiveRecord::Schema.define(:version => 20121014113534) do
 
   create_table "competencies", :force => true do |t|
     t.string   "competencies"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(:version => 20121008104943) do
     t.string   "gender_string"
     t.string   "residential_status_string"
     t.string   "department"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "idea_title"
+    t.string   "idea_content"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "idea_name"
+    t.text     "idea_body"
   end
 
   create_table "socials", :force => true do |t|

@@ -4,10 +4,12 @@ class PositionsController < ApplicationController
   def index
     @search = Position.search(params[:q])
     @positions = @search.result
-    
+    @posts = Post.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @positions }
+      format.json { render json: @posts }
     end
   end
 
@@ -27,7 +29,7 @@ class PositionsController < ApplicationController
   def new
     @position = Position.new
     1.times { @position.competencies.build }
-    
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @position }
@@ -82,7 +84,7 @@ class PositionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def jobdescription
     @position = Position.find(params[:id])
   end
@@ -90,7 +92,7 @@ class PositionsController < ApplicationController
   def personalprofile
     @position = Position.find(params[:id])
   end
-  
+
   def competencies
     @position = Position.find(params[:id])
   end
