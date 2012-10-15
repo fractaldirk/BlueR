@@ -1,0 +1,12 @@
+<legend>
+  <p>
+    (<%= comment.idea_commenter %> said:)
+    <%= simple_format comment.idea_comment %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy Comment', [comment.post, comment],
+                 :confirm => 'Are you sure?',
+                 :method => :delete %>
+  </p>
+</legend>

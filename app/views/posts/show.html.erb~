@@ -1,14 +1,30 @@
 <p id="notice"></p>
-<center>
-  <h1><%= @post.idea_title %></h1>
-  <h5>(<%= @post.idea_name %>)</h5>
-</center>
 
-<p>
-  <b>Idea content:</b>
-  <%= simple_format @post.idea_body %>
-</p>
+<div class="span1">
+</div>
 
+<div class="span10">
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+    <h1 style="color: green"><%= @post.idea_title %> (<%= @post.comments.count %>)</h1>
+    <h5>(<%= @post.idea_name %>)</h5>
+
+  <hr />
+
+  <p>
+    <%= simple_format @post.idea_body %>
+  </p>
+  <hr />
+
+  <h4>Comments</h4>
+  <hr />
+  <%= render @post.comments %>
+
+  <h6>Add a comment:</h6>
+  <%= render "comments/form" %>
+
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+</div>
+
+<div class="span1">
+</div>

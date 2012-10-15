@@ -10,10 +10,10 @@
       </div>
         <div class="span10">
           <div class="item">
-            <%= render "positions/index_positions" %>
+            <%= render "index_positions" %>
           </div>
           <div class="item">
-            <%= render "positions/index_personal_profile" %>
+            <%= render "index_personal_profile" %>
           </div>
           <div class="active item">
             <%= render "posts/index_content" %>
