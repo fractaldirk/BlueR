@@ -130,4 +130,40 @@ class PositionsController < ApplicationController
     end
   end
 
+  def international
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
+  def unitedkingdom
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
+  def netherlands
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
 end

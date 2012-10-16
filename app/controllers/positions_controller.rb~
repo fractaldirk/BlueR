@@ -68,7 +68,9 @@ class PositionsController < ApplicationController
           format.html { redirect_to jobdescription_position_path, notice: 'Job description was successfully updated.' }
           format.json { head :no_content }
         elsif params[:personal_profile_button]
-          format.html { redirect_to personalprofile_position_path, notice: 'Personal profile has been succesfully updated'}
+          format.html { redirect_to personalprofile_position_path, notice: 'Personal profile have been successfully updated'}
+        elsif params[:competencies_button]
+          format.html { redirect_to competencies_position_path, notice: 'Competencies have been successfully updated'}
         else
           format.html { redirect_to @position, notice: 'Position was successfully updated.' }
           format.json { head :no_content }
@@ -127,5 +129,43 @@ class PositionsController < ApplicationController
 
     end
   end
+
+  def international
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
+  def unitedkingdom
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
+  def netherlands
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
+
 
 end

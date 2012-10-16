@@ -4,10 +4,13 @@ BlueRobin1::Application.routes.draw do
   end
 
   get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"
+  get 'positions/international' => 'positions#international', :controller => "positions"
+  get 'positions/netherlands' => 'positions#netherlands', :controller => "positions"
+  get 'positions/uk' => 'positions#unitedkingdom', :controller => "positions"
 
   resources :positions do
       member do
-        post 'jobdescription'
+        get 'jobdescription'
         get 'personalprofile'
         get 'competencies'
         get 'editjobdescription'

@@ -4,6 +4,9 @@ BlueRobin1::Application.routes.draw do
   end
 
   get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"
+  get 'positions/international' => 'positions#international', :controller => "positions"
+  get 'positions/netherlands' => 'positions#netherlands', :controller => "positions"
+  get 'positions/unitedkingdom' => 'positions#unitedkingdom', :controller => "positions"
 
   resources :positions do
       member do

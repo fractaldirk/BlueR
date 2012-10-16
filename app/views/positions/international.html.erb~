@@ -10,10 +10,10 @@
       </div>
         <div class="span10">
           <div class="active item">
-            <%= render "positions/newzealand/index_positions" %>
+            <%= render "positions/international/index_positions" %>
           </div>
           <div class="item">
-            <%= render "positions/newzealand/index_personal_profile" %>
+            <%= render "positions/international/index_personal_profile" %>
           </div>
           <div class="item">
             <%= render "knowledge_center" %>

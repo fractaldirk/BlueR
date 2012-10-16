@@ -1,4 +1,4 @@
-<h1>New Zealand positions</h1><br />
+<h1>New Zealand positions</h1><%= render 'positions/newzealand/index_dropdown' %><br />
 
 <%= link_to 'New Position', new_position_path %>
 <hr />

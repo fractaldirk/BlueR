@@ -8,12 +8,16 @@ has_many :competencies
 accepts_nested_attributes_for :competencies, allow_destroy: true
 validates_presence_of :job_title, :department
 
-
 def status
   if name == ""
     "Vacant"
   else "Filled"
   end
+end
+
+def international_count
+  Position.where(office == 1)
+    true
 end
 
 end
