@@ -3,15 +3,17 @@ BlueRobin1::Application.routes.draw do
     resources :comments
   end
 
+  get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"
+
   resources :positions do
-    member do
-      get 'jobdescription'
-      get 'personalprofile'
-      get 'competencies'
-      get 'editjobdescription'
-      get 'editcompetencies'
-      get 'editpersonalprofile'
-    end
+      member do
+        get 'jobdescription'
+        get 'personalprofile'
+        get 'competencies'
+        get 'editjobdescription'
+        get 'editcompetencies'
+        get 'editpersonalprofile'
+      end
   end
 
   # The priority is based upon order of creation:

@@ -64,8 +64,17 @@ class PositionsController < ApplicationController
 
     respond_to do |format|
       if @position.update_attributes(params[:position])
-        format.html { redirect_to @position, notice: 'Position was successfully updated.' }
-        format.json { head :no_content }
+        if params[:jobdescription_button]
+          format.html { redirect_to jobdescription_position_path, notice: 'Job description was successfully updated.' }
+          format.json { head :no_content }
+        elsif params[:personal_profile_button]
+          format.html { redirect_to personalprofile_position_path, notice: 'Personal profile have been successfully updated'}
+        elsif params[:competencies_button]
+          format.html { redirect_to competencies_position_path, notice: 'Competencies have been successfully updated'}
+        else
+          format.html { redirect_to @position, notice: 'Position was successfully updated.' }
+          format.json { head :no_content }
+        end
       else
         format.html { render action: "edit" }
         format.json { render json: @position.errors, status: :unprocessable_entity }
@@ -98,7 +107,7 @@ class PositionsController < ApplicationController
   end
 
   def editjobdescription
-   @position = Position.find(params[:id])
+    @position = Position.find(params[:id])
   end
 
   def editcompetencies
@@ -108,4 +117,17 @@ class PositionsController < ApplicationController
   def editpersonalprofile
    @position = Position.find(params[:id])
   end
+
+  def newzealand
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_newzealand_path }
+      format.json { render json: positions_newzealand_path }
+
+    end
+  end
+
 end

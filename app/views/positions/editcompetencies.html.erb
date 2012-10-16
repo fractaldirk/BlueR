@@ -19,7 +19,7 @@
   <li class="active"><a href="#competencies" data-toggle="tab">Competencies</a></li>
   <li><a href="#helper" data-toggle="tab">Helper</a></li>
 </ul>
- 
+
 <div class="tab-content">
   <div class="tab-pane" id="general">
     <%= render 'form_general', :f => f %>
@@ -40,7 +40,7 @@
 </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save competencies", :name => "competencies_button" %>
   </div>
 <% end %>
 <br />

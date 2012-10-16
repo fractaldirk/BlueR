@@ -10,10 +10,10 @@
       </div>
         <div class="span10">
           <div class="item">
-            <%= render "index_positions" %>
+            <%= render "positions/index_positions" %>
           </div>
           <div class="item">
-            <%= render "index_personal_profile" %>
+            <%= render "positions/index_personal_profile" %>
           </div>
           <div class="active item">
             <%= render "posts/index_content" %>
@@ -26,3 +26,5 @@
   </div>
 
 </body>
+
+<%= link_to 'new-zealand', newzealand_path %>

@@ -1,70 +1,94 @@
 <h2>Job Description</h2>
 
-<dl class="dl-horizontal">
-  <dt><strong>Job title:</strong></dt>
-  <dd><strong><%= @position.job_title %></strong></dd>
-  <dt>Valid from:</dt>
-  <dd><%= @position.valid_from %></dd>
-  <dt>Job grade:</dt>
-  <dd><%= @position.job_grade %></dd>
-  <dt>Reports to:</dt>
-  <dd><%= @position.reports_to %></dd>
-  <dt>Line manages:</dt>
-  <dd><%= @position.line_manages %></dd>
-</dl>
+<fieldset>
+  <dl class="dl-horizontal">
+    <dt><strong>Job title:</strong></dt>
+    <dd><strong><%= @position.job_title %></strong></dd>
+    <dt>Valid from:</dt>
+    <dd><%= @position.valid_from %></dd>
+    <dt>Job grade:</dt>
+    <dd><%= @position.job_grade %></dd>
+    <dt>Reports to:</dt>
+    <dd><%= @position.reports_to %></dd>
+    <dt>Line manages:</dt>
+    <dd><%= @position.line_manages %></dd>
+  </dl>
+</fieldset>
 
 <hr />
-<p><h3>OVERALL PURPOSE OF JOB</h3></p>
+  <p><h3>OVERALL PURPOSE OF JOB</h3></p>
+<fieldset>
   <%= simple_format @position.overall_purpose %>
-<br />
+</fieldset>
 
-<p><h3>SCOPE</h3></p>
+  <p><h3>SCOPE</h3></p>
+<fieldset>
   <%= simple_format @position.scope %>
-<br />
+</fieldset>
 
-<p><h3>MAJOR FUNCTIONS / RESPONSIBILITIES</h3></p>
-<b><u>Conceptual tasks, Strategy Development and/or Project Development</u></b>
-  <%= simple_format @position.conceptual %>
+  <p><h3>MAJOR FUNCTIONS / RESPONSIBILITIES</h3></p>
+    <b><u>Conceptual tasks, Strategy Development and/or Project Development</u></b>
+  <fieldset>
+    <%= simple_format @position.conceptual %><br/>
+  </fieldset>
 
-<b><u>Implementation</u></b>
-  <%= simple_format @position.implementation %>
+    <b><u>Implementation</u></b>
+  <fieldset>
+    <%= simple_format @position.implementation %><br/>
+  </fieldset>
 
-<b><u>Support/Coaching/Leadership</u></b>
-  <%= simple_format @position.support %>
+    <b><u>Support/Coaching/Leadership</u></b>
+  <fieldset>
+      <%= simple_format @position.support %><br/>
+  </fieldset>
 <br />
 
 <p><h3>COMPETENCY PROFILE</h3></p>
 <br />
-
- <b><u>Organisational competencies</u></b><br />
-  <li>Professionalism</li>
-  <li>Achievement</li>
-  <li>Interpersonal relationship</li>
-  <li>Knowlegde sharing</li>
-  <li>values diversity</li>
-  <li>Innovation</li>
+  <b><u>Organisational competencies</u></b><br />
+  <ul>
+    <li>Professionalism</li>
+    <li>Achievement</li>
+    <li>Interpersonal relationship</li>
+    <li>Knowlegde sharing</li>
+    <li>values diversity</li>
+    <li>Innovation</li>
+  </ul>
 <br />
 
-<b><u>Job related competencies</u></b>
-<p>
-<% for competency in @position.competencies %>
-  <li><%=h competency.competencies %></li>
-<% end %>
-</p>
+  <b><u>Job related competencies</u></b>
+  <% for competency in @position.competencies %>
+    <ul>
+      <li><%=h competency.competencies %></li>
+    </ul>
+  <% end %>
+
 
 <p><h3>ATTITUDE</h3></p>
-  <li><%= @position.attitude1 %></li>
-  <li><%= @position.attitude2 %></li>
-  <li><%= @position.attitude3 %></li>
-  <li><%= @position.attitude4 %></li>
-  <li><%= @position.attitude5 %></li>
+  <ul>
+  <% if @position.attitude1? %>
+      <li><%= @position.attitude1 %></li>
+  <% end %>
+  <% if @position.attitude2? %>
+    <li><%= @position.attitude2 %></li>
+  <% end %>
+  <% if @position.attitude3? %>
+    <li><%= @position.attitude3 %></li>
+  <% end %>
+  <% if @position.attitude4? %>
+    <li><%= @position.attitude4 %></li>
+  <% end %>
+  <% if @position.attitude5? %>
+    <li><%= @position.attitude5 %></li>
+  <% end %>
+  </ul>
 <br />
 
-<p><h3>SPECIFIC WORK ENVIRONMENT</h3></p>
+
+  <p><h3>SPECIFIC WORK ENVIRONMENT</h3></p>
+<fieldset>
   <%= simple_format @position.specific_work_env %>
-<br />
-
-
+</fieldset>
 
 <br />
 <%= link_to 'Edit', editjobdescription_position_path(@position) %> |

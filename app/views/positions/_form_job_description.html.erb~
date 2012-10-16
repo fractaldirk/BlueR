@@ -7,10 +7,6 @@
     </div>
     <div id="collapseOne" class="accordion-body collapse in">
       <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :job_title %><br />
-    	  <%= f.text_field :job_title %>
-  	</div>
 
   	<div class="field">
     	  <%= f.label :valid_from %><br />
@@ -43,8 +39,9 @@
     <div id="collapseTwo" class="accordion-body collapse">
       <div class="accordion-inner">
         <div class="field">
-	  <%= f.label :overall_purpose %><br />
-	  <%= f.text_area :overall_purpose, :style => "width: 600pt;" "height: 250pt;" %>
+	  <% field_set_tag 'Overall Purpose of job' do -%>
+  <%= f.text_area :overall_purpose %>
+<% end -%>
 	</div>
       </div>
     </div>
@@ -144,14 +141,3 @@
     </div>
   </div>
 </div>  
-
-
-  
-
-
-
-
-
-
-
-

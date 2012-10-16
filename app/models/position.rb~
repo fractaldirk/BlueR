@@ -7,7 +7,6 @@ attr_accessible :position_name, :job_title, :valid_from, :job_grade, :reports_to
 has_many :competencies
 accepts_nested_attributes_for :competencies, allow_destroy: true
 validates_presence_of :job_title, :department
-validates_presence_of :startdate, :unless => :name == false
 
 
 def status

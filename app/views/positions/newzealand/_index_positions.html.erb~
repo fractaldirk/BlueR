@@ -1,8 +1,8 @@
-  <h1>Listing positions</h1><%= render 'positions/dropdown_offices' %><br />
+<h1>New Zealand positions</h1><br />
 
 <%= link_to 'New Position', new_position_path %>
 <hr />
-<%= search_form_for @search do |f| %>
+<%= search_form_for @search, url: positions_newzealand_path do |f| %>
 <table class="table table-bordered ">
   <tr>
     <th>Search by</th>
@@ -28,6 +28,7 @@
     <th>Destroy</th>
   </tr>
     <% @positions.each do |position| %>
+      <% if position.office == 4 %>
   <tr>
     <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
     <td><%= position.department %></td>
@@ -36,5 +37,6 @@
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+      <% end %>
     <% end %>
 </table>

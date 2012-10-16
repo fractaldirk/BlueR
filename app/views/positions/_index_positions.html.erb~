@@ -1,6 +1,4 @@
-<body class="pizza">
-
-<h1>Listing positions</h1><br />
+  <h1>Listing positions</h1><%= render 'dropdown_offices' %><br />
 
 <%= link_to 'New Position', new_position_path %>
 <hr />
@@ -40,5 +38,3 @@
   </tr>
     <% end %>
 </table>
-
-</body>
