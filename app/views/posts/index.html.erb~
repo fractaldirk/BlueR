@@ -13,7 +13,7 @@
             <%= render "positions/index_positions" %>
           </div>
           <div class="item">
-            <%= render "positions/index_personal_profile" %>
+            <%= render "positions/index_nav" %>
           </div>
           <div class="active item">
             <%= render "posts/index_content" %>
@@ -26,5 +26,3 @@
   </div>
 
 </body>
-
-<%= link_to 'new-zealand', newzealand_path %>

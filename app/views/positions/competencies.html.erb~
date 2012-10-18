@@ -1,21 +1,21 @@
 <body class="">
 
-  <div id="personalprofilecarousel" class="carousel slide" data-interval="false">
+  <div id="competenciescarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
       <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#personalprofilecarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control left" id="carouselleft" href="#competenciescarousel" data-slide="prev">&lsaquo;</a>
         <br />
       </div>
         <div class="span10">
           <div class="active item">
-            <%= render "personal_profile" %>
+            <%= render "competencies_competencies" %>
           </div>
           <div class="item">
-            <%= render "personal_profile_nav" %>
+            <%= render "competencies_nav" %>
           </div>
         </div>
         <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#personalprofilecarousel" data-slide="next">&rsaquo;</a>
+        <a class="carousel-control right" id="carouselright" href="#competenciescarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>
   </div>

@@ -11,16 +11,38 @@
  *= require_self
  *= require_tree .
 */
-.pizza {
-  background-color:#66CCFF;
-}
-
 .pizza2 {
-  background-color:#3399CC;
+  position:fixed;
+  top:0px;
+  left:0px;
 }
 
+h1 {
+  text-shadow:2px 2px #0000FF;
+  text-decoration:overline;
+  font-family: purisa;
+}
 
 .redie {
   background-color:#900000;
   color:#FFFFFF;
+}
+
+.homepage_button {
+  position:fixed;
+  top:65px;
+  right:150px;
+}
+
+#edit_button {
+  position:fixed;
+  top:75px;
+  right:220px;
+}
+
+#submit_button {
+  position:fixed;
+  top:72px;
+  right:305px;
+  font-family: purisa;
 }

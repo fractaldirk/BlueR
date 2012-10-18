@@ -1,14 +1,32 @@
-<div class="accordion" id="accordion3">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne">
-        Overal information
-      </a>
-    </div>
-    <div id="collapseOne" class="accordion-body collapse in">
-      <div class="accordion-inner">
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
 
-  	<div class="field">
+      <ul>
+      <% @position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#general" data-toggle="tab">General</a></li>
+  <li><a href="#purpose" data-toggle="tab">Overall purpose & Scope</a></li>
+  <li><a href="#responsibilities" data-toggle="tab">Responsibilities</a></li>
+  <li><a href="#attitude" data-toggle="tab">Attitude</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="general">
+
+    <div class="field">
+      <%= f.label :job_title %>
+      <%= f.text_field :job_title %>
+    </div>
+
+    <div class="field">
     	  <%= f.label :valid_from %><br />
           <%= f.date_select(:valid_from, :order => [:day, :month, :year]) %>
   	</div>
@@ -27,116 +45,53 @@
     	  <%= f.label :line_manages %><br />
     	  <%= f.text_field :line_manages %>
   	</div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo">
-        Overall purpose of the job
-      </a>
-    </div>
-    <div id="collapseTwo" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-	  <%= f.label :overall_purpose %><br />
-	  <%= f.text_area :overall_purpose, :style => "width: 600pt;" "height: 250pt;" %>
-	</div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
-        Scope
-      </a>
-    </div>
-    <div id="collapseThree" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :scope %><br />
-    	  <%= f.text_area :scope, :style => "width: 600pt;" "height: 250pt;" %>
-  	</div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseFour">
-        Conceptual (key functions & responsibilities)
-      </a>
-    </div>
-    <div id="collapseFour" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-          <%= f.label :conceptual, "Conceptual responsibilities" %><br />
-    	  <%= f.text_area :conceptual, :style => "width: 600pt;" "height: 250pt;" %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseFive">
-        Implementation (key functions & responsibilities)
-      </a>
-    </div>
-    <div id="collapseFive" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :implementation, "Implementational responsibilities" %><br />
-    	  <%= f.text_area :implementation, :style => "width: 600pt;" "height: 250pt;" %>
-  	</div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSix">
-        Supportive/leadership (key functions & responsibilities)
-      </a>
-    </div>
-    <div id="collapseSix" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :support, "Supportive responsibilities" %><br />
-    	  <%= f.text_area :support, :style => "width: 600pt;" "height: 250pt;" %>
-  	</div>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven">
-        Specific Work Environment
-      </a>
-    </div>
-    <div id="collapseSeven" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
+
+  	<div class="field">
     	  <%= f.label :specific_work_env, "Specific Work Environment" %><br />
     	  <%= f.text_area :specific_work_env, :style => "width: 600pt;" "height: 250pt;" %>
   	</div>
-      </div>
-    </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEight">
-        Attitude/Characteristics
-      </a>
+
+  <div class="tab-pane" id="purpose">
+    <div class="field">
+    	  <%= f.label :overall_purpose %><br />
+    	  <%= f.text_area :overall_purpose, :style => "width: 600pt;" "height: 250pt;" %>
+  	</div>
+
+  	<div class="field">
+    	  <%= f.label :scope %><br />
+    	  <%= f.text_area :scope, :style => "width: 600pt;" "height: 250pt;" %>
+  	</div>
+  </div>
+
+  <div class="tab-pane" id="responsibilities">
+      <div class="field">
+        <%= f.label :conceptual, "Conceptual responsibilities" %><br />
+    	  <%= f.text_area :conceptual, :style => "width: 600pt;" "height: 250pt;" %>
     </div>
-    <div id="collapseEight" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
+
+    <div class="field">
+    	  <%= f.label :implementation, "Implementational responsibilities" %><br />
+    	  <%= f.text_area :implementation, :style => "width: 600pt;" "height: 250pt;" %>
+  	</div>
+
+    <div class="field">
+    	  <%= f.label :support, "Supportive responsibilities" %><br />
+    	  <%= f.text_area :support, :style => "width: 600pt;" "height: 250pt;" %>
+  	</div>
+  </div>
+
+  <div class="tab-pane" id="attitude">
+    <div class="field">
     	  <%= f.label :attitude1, "Please list preferred characteristics" %><br />
     	  <%= f.text_field :attitude1, :style => "width: 600pt;", :class => 'attitude' %>
-	  <%= f.text_field :attitude2, :style => "width: 600pt;", :class => 'attitude' %>
-     	  <%= f.text_field :attitude3, :style => "width: 600pt;", :class => 'attitude' %>
-	  <%= f.text_field :attitude4, :style => "width: 600pt;", :class => 'attitude' %>
-   	  <%= f.text_field :attitude5, :style => "width: 600pt;", :class => 'attitude' %>
+    	  <%= f.text_field :attitude2, :style => "width: 600pt;", :class => 'attitude' %>
+    	  <%= f.text_field :attitude3, :style => "width: 600pt;", :class => 'attitude' %>
+    	  <%= f.text_field :attitude4, :style => "width: 600pt;", :class => 'attitude' %>
+    	  <%= f.text_field :attitude5, :style => "width: 600pt;", :class => 'attitude' %>
   	</div>
-      </div>
-    </div>
   </div>
-</div>  
+</div>
+
+<%= f.submit "Done", :class => "btn btn-success", :id => "submit_button", :name => "jobdescription_button" %>
+<% end %>

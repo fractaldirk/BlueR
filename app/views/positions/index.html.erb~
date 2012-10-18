@@ -1,6 +1,8 @@
-<body class="pizza2">
+<body>
 
-<p class="logotextindex"><%= link_to image_tag("bluerobintext.png", :border=>4) %></p>
+<%= image_tag 'Logo.jpg', :class => 'logoindex' %>
+
+<%= image_tag 'windturbine.png', :class => 'turbineindex' %>
 
   <div id="myCarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
@@ -13,7 +15,7 @@
             <%= render "index_positions" %>
           </div>
           <div class="item">
-            <%= render "index_personal_profile" %>
+            <%= render "index_nav" %>
           </div>
           <div class="item">
             <%= render "knowledge_center" %>

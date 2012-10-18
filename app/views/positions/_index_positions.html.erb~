@@ -1,24 +1,23 @@
-  <h1>Listing positions</h1><%= render 'dropdown_offices' %><br />
+  <h1>Listing positions</h1><%= render 'positions/dropdown_offices' %><br />
 
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search do |f| %>
-<table class="table table-bordered ">
-  <tr>
-    <th>Search by</th>
-    <th>Search field</th>
-  </tr>
-  <tr>
-    <td style="width: 90pt"><%= f.label :job_title_cont, "Job title" %></td>
-    <td style="width: 100pt"><%= f.text_field :job_title_cont %></td>
-    <td><div class="action"><%= f.submit "Search" %></div></td>
-  </tr>
-</table>
+<form class="form-inline">
+<div >
+  <%= f.label :job_title_cont, "Job title" %>
+</div>
+<div >
+  <%= f.text_field :job_title_cont %>
+</div>
+
+    <div class="action"><%= f.submit "Search" %></div>
+</form>
 <% end %>
 
 <hr />
 
-<table class="table table-bordered table-striped">
+<table class="table table-hover">
   <tr>
     <th><%= sort_link @search, :job_title, "Job title" %></th>
     <th><%= sort_link @search, :department, "Department" %></th>

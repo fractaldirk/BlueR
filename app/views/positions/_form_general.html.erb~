@@ -1,10 +1,23 @@
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+      <% @position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
    <%= f.label :job_title %><br />
    <%= f.text_field :job_title %>
   </div>
 
   <div class="field">
-    <%= f.label :office, "To which office belongs this position?" %><br />
+    <%= f.label :office, "NRO" %><br />
     <%= f.select(:office, [['International','1'], ['United Kingdom','2'], ['Netherlands', '3'], ['New-Zealand', '4']], :prompt => 'Select office') %>
   </div>
 
@@ -14,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :unique_position, "Is this a unique position or can it be filled by multiple persons?" %><br />
+    <%= f.label :unique_position, "Is this an unique position?" %><br />
     <%= f.select(:unique_position, [['Yes', 'True'], ['No', 'False']], :prompt => 'Please select') %>
   </div>
 
@@ -27,3 +40,7 @@
     <%= f.label :permanent, "Is this a permanent position?" %><br />
     <%= f.select(:permanent, [['Permanent', 'Yes'], ['Temporarily', 'No']], :prompt => 'Please define') %>
   </div>
+
+    <%= f.submit "Create position" %>
+
+<% end %>

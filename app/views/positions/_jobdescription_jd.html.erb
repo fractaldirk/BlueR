@@ -5,7 +5,7 @@
     <dt><strong>Job title:</strong></dt>
     <dd><strong><%= @position.job_title %></strong></dd>
     <dt>Valid from:</dt>
-    <dd><%= @position.valid_from %></dd>
+    <dd><%= @position.valid_from.strftime("%d %B %Y") unless @position.valid_from.nil? %></dd>
     <dt>Job grade:</dt>
     <dd><%= @position.job_grade %></dd>
     <dt>Reports to:</dt>
@@ -90,6 +90,4 @@
   <%= simple_format @position.specific_work_env %>
 </fieldset>
 
-<br />
-<%= link_to 'Edit', editjobdescription_position_path(@position) %> |
-<%= link_to 'Back', @position %>
+<hr />

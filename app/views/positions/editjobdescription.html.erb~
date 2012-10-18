@@ -1,47 +1,26 @@
-<%= form_for(@position) do |f| %>
-  <% if @position.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+<body>
+  <div id="myCarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
+            <%= link_to 'Back', jobdescription_position_path, :class => "btn btn-action", :id => "edit_button" %>
+            <%= render "form_job_description" %>
+          </div>
+          <div class="item">
 
-      <ul>
-      <% @position.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          </div>
+          <div class="item">
+
+          </div>
+        </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
     </div>
-  <% end %>
-
-
-<ul class="nav nav-tabs" id="myTab">
-  <li><a href="#general" data-toggle="tab">General</a></li>
-  <li class="active"><a href="#jd" data-toggle="tab">Job Description</a></li>
-  <li><a href="#profile" data-toggle="tab">Personal Profile</a></li>
-  <li><a href="#competencies" data-toggle="tab">Competencies</a></li>
-  <li><a href="#helper" data-toggle="tab">Helper</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane" id="general">
-    <%= render 'form_general', :f => f %>
   </div>
-  <div class="tab-pane active" id="jd">
-    <%= render 'form_job_description', :f => f %>
-  </div>
-  <div class="tab-pane" id="profile">
-    <%= render 'form_personal_profile', :f => f %>
-  </div>
-  <div class="tab-pane" id="competencies">
-    <%= f.fields_for :competencies do |builder| %>
-    <%= render 'form_competencies', :f => f, :builder => builder %>
-    <% end %>
-    <%= link_to_add_fields "Add Competency", f, :competencies %>
-  </div>
-  <div class="tab-pane" id="helper">...</div>
-</div>
-
-  <div class="actions">
-    <%= f.submit "Save Job Description", :name => "jobdescription_button" %>
-  </div>
-<% end %>
-<br />
-<%= link_to 'Back', jobdescription_position_path %> |
+</body>
