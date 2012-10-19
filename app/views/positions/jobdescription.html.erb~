@@ -8,12 +8,15 @@
       </div>
         <div class="span10">
           <div class="active item">
-            <%= link_to 'Edit jd', editjobdescription_position_path(@position), :class => "btn btn-danger", :id => "edit_button"%>
+            <%= link_to 'Edit', editjobdescription_position_path(@position), :class => "btn btn-danger", :id => "edit_button"%>
             <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
             <%= render "jobdescription_jd" %>
           </div>
           <div class="item">
             <%= render "jobdescription_nav" %>
+          </div>
+          <div>
+            <%= render "positions/wikis/job_description_wiki" %>
           </div>
         </div>
         <div class="span1">

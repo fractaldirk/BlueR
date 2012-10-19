@@ -1,8 +1,8 @@
-Feature: edit positions
+Feature: edit and create competencies
 Given I am on the home page
-And I want to edit a position
+And I want to edit or create competencies
 When I follow an existing position
-Then I should be able to edit the position
+Then I should be able to edit or create competencies
 
   Background: Creating new position
     Given I am on the home page
@@ -18,14 +18,13 @@ Then I should be able to edit the position
     Then I should see "Listing positions"
     And I should see "Captain America"
 
-      Scenario: Editing position
+      Scenario: Create competencies
         When I follow "Captain America"
         Then I should see "Job Description"
-        When I follow "Edit"
-        Then I should see "Job title"
-        When I fill in "Job title" with "Captain America Edited"
-        And I press "Done"
-        Then I should see "Captain America Edited"
-        Then I should see "Wiki"
         When I follow image link "Competencies"
         Then I should see "Functional competencies"
+        When I follow "Edit"
+        Then I should see "Competencies"
+        When I follow "Add Competency"
+        When I fill in the following attributes
+          |Knowledge and or experience in pizza baking|

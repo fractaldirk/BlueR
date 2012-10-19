@@ -1,8 +1,8 @@
-Feature: edit positions
+Feature: edit job description
 Given I am on the home page
 And I want to edit a position
 When I follow an existing position
-Then I should be able to edit the position
+Then I should be able to edit the job description of the position
 
   Background: Creating new position
     Given I am on the home page
@@ -18,7 +18,7 @@ Then I should be able to edit the position
     Then I should see "Listing positions"
     And I should see "Captain America"
 
-      Scenario: Editing position
+      Scenario: Editing Job Description
         When I follow "Captain America"
         Then I should see "Job Description"
         When I follow "Edit"
