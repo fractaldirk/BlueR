@@ -1,10 +1,31 @@
-<fieldset>
-  <%= builder.text_field :competencies, :style => "width: 600pt;", :class => 'competency' %>
-  <%= builder.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
-  <%= builder.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
-  <%= builder.select(:competency_options, [['F'],['M'],['L'],['S'],['P']], { :prompt => "TBD"}, :style => "width: 40pt;") %>
-  <%= builder.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
-</fieldset>
-   
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
 
+      <ul>
+      <% @position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.fields_for :competencies do |builder| %>
+      <fieldset>
+        <%= builder.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', :placeholder => 'autocomplete dictionary for assistance', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies)} %>
+        <%= builder.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
+        <%= builder.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
+        <%= builder.select(:competency_options, [['F'],['M'],['L'],['S']], { :prompt => "TBD"}, :style => "width: 60pt;") %>
+        <%= builder.hidden_field :_destroy %>
+        <%= link_to "remove", '#', class: "remove_fields" %>
+      </fieldset>
+    <% end %>
+    <%= link_to_add_fields "Add Competency", f, :competencies %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save competencies", :name => "competencies_button", :class => 'btn btn-success', :id => 'submit_button'%>
+  </div>
+<% end %>

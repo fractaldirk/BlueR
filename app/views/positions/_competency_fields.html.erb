@@ -1,8 +1,8 @@
-<fieldset> 
-  <%= f.text_field :competencies, :style => "width: 600pt;", :class => 'competency' %>
+<fieldset>
+  <%= f.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies)} %>
   <%= f.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
   <%= f.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
-  <%= f.select(:competency_options, [['F'],['M'],['L'],['P']], { :prompt => "TBD"}, :style => "width: 40pt;") %>
+  <%= f.select(:competency_options, [['F'],['M'],['L'],['P']], { :prompt => "TBD"}, :style => "width: 60pt;") %>
   <%= f.hidden_field :_destroy %>
   <%= link_to "remove", '#', class: "remove_fields" %>
 </fieldset>

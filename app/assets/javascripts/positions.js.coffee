@@ -14,7 +14,15 @@ jQuery ->
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
 
-  
-   
-  
-     
+  $('form').on 'click', '.add_fields', (event) ->
+    $('.auto_search_competency').autocomplete
+      source: $('.auto_search_competency').data('autocomplete-source')
+
+  $('.auto_search').autocomplete
+    source: $('.auto_search').data('autocomplete-source')
+
+  $('.auto_search_name').autocomplete
+    source: $('.auto_search_name').data('autocomplete-source')
+
+  $('.auto_search_competency').autocomplete
+    source: $('.auto_search_competency').data('autocomplete-source')

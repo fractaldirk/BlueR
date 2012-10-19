@@ -14,17 +14,17 @@ jQuery ->
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
 
-  $('.inputgender') = gender ->
-    when 1
-      'Female'
-    when 2
-      'Male'
-    else
-      'alien'
-   
+  $('form').on 'click', '.add_fields', (event) ->
+    $('.auto_search_competency').autocomplete
+      source: $('.auto_search_competency').data('autocomplete-source')
 
-  $('.gender') = gender
-  
-   
-  
-     
+
+jQuery ->
+  $('.auto_search').autocomplete
+    source: $('.auto_search').data('autocomplete-source')
+
+  $('.auto_search_name').autocomplete
+    source: $('.auto_search_name').data('autocomplete-source')
+
+  $('.auto_search_competency').autocomplete
+    source: $('.auto_search_competency').data('autocomplete-source')

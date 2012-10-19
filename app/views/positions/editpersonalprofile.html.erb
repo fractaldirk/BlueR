@@ -11,32 +11,67 @@
     </div>
   <% end %>
 
+<div class="accordion" id="accordion4">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalgeneral">
+        Overal information
+      </a>
+    </div>
+    <div id="personalgeneral" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <div class="field">
+	  <%= f.label :name %><br />
+    	  <%= f.text_field :name %>
+        </div>
 
-<ul class="nav nav-tabs" id="myTab">
-  <li><a href="#general" data-toggle="tab">General</a></li>
-  <li><a href="#jd" data-toggle="tab">Job Description</a></li>
-  <li class="active"><a href="#profile" data-toggle="tab">Personal Profile</a></li>
-  <li><a href="#competencies" data-toggle="tab">Competencies</a></li>
-  <li><a href="#helper" data-toggle="tab">Helper</a></li>
-</ul>
+  	<div class="field">
+    	  <%= f.label :picture, "HR Picture" %><br />
+    	  <%= f.select(:picture, [['Select Avenger', 'nopictureyet'],['Steve Rogers (Moralist)', 'Steve Rogers'], ['Anthony Stark (Scientist)', 'Anthony Stark']]) %>
+  	</div>
 
-<div class="tab-content">
-  <div class="tab-pane" id="general">
-    <%= render 'form_general', :f => f %>
+  	<div class="field">
+    	  <%= f.label :date_birth %><br />
+    	  <%= f.date_select(:date_birth, :order => [:day, :month, :year], :start_year => 1930, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
+  	</div>
+
+  	<div class="field">
+    	  <%= f.label :gender_string %><br />
+    	  <%= f.select(:gender_string, [['Female', 'Female'], ['Male', 'Male']], :prompt => 'Please select') %>
+  	</div>
+
+  	<div class="field">
+    	  <%= f.label :nationality_string %><br />
+    	  <%= f.select(:nationality_string, [['Dutch', 'Dutch'], ['German', 'German']], :prompt => 'Please select') %>
+  	</div>
+
+  	<div class="field">
+    	  <%= f.label :residential_status_string %><br />
+    	  <%= f.select(:residential_status_string, [['Permanent Residence Status', 'Permanent Residence Status'], ['Visa', 'Visa']], :prompt => 'Please select') %>
+  	</div>
+
+  	<div class="field">
+    	  <%= f.label :start_date %><br />
+    	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :start_year => 1972, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
+  	</div>
+      </div>
+    </div>
   </div>
-  <div class="tab-pane" id="jd">
-    <%= render 'form_job_description', :f => f %>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalexperience">
+        Personal Development (Notes)
+      </a>
+    </div>
+    <div id="personalexperience" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <div class="field">
+    	  <%= f.label :personal_development, "Personal Development Notes" %><br />
+    	  <%= f.text_area :personal_development, :style => "width: 600pt;" "height: 250pt;" %>
+  	</div>
+      </div>
+    </div>
   </div>
-  <div class="tab-pane active" id="profile">
-    <%= render 'form_personal_profile', :f => f %>
-  </div>
-  <div class="tab-pane" id="competencies">
-    <%= f.fields_for :competencies do |builder| %>
-    <%= render 'form_competencies', :f => f, :builder => builder %>
-    <% end %>
-    <%= link_to_add_fields "Add Competency", f, :competencies %>
-  </div>
-  <div class="tab-pane" id="helper">...</div>
 </div>
 
   <div class="actions">

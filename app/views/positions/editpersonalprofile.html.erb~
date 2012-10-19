@@ -40,7 +40,7 @@
 </div>
 
   <div class="actions">
-    <%= f.submit "Save Personal Profile", :name => 'personal_profile_button' %>
+    <%= f.submit "Save Personal Profile", :name => "personal_profile_button" %>
   </div>
 <% end %>
 <br />

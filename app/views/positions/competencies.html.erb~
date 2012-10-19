@@ -1,5 +1,4 @@
 <body class="">
-
   <div id="competenciescarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
       <div class="span1">
@@ -8,10 +7,15 @@
       </div>
         <div class="span10">
           <div class="active item">
+            <%= link_to 'Edit', editcompetencies_position_path(@position), :class => 'btn btn-danger', :id => 'edit_button' %>
+            <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
             <%= render "competencies_competencies" %>
           </div>
           <div class="item">
             <%= render "competencies_nav" %>
+          </div>
+          <div class="item">
+            <%= render "positions/wikis/competencies_wiki" %>
           </div>
         </div>
         <div class="span1">

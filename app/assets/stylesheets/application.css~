@@ -17,6 +17,10 @@
   left:0px;
 }
 
+.background {
+  background-image:url('background.jpg')
+}
+
 h1 {
   text-shadow:2px 2px #0000FF;
   text-decoration:overline;
@@ -42,7 +46,13 @@ h1 {
 
 #submit_button {
   position:fixed;
-  top:72px;
+  top:71px;
   right:305px;
   font-family: purisa;
+}
+
+.search_table {
+  background-color:#000000;
+  height:90px;
+  width:100%;
 }

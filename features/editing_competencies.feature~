@@ -24,7 +24,7 @@ Then I should be able to edit or create competencies
         When I follow image link "Competencies"
         Then I should see "Functional competencies"
         When I follow "Edit"
-        Then I should see "Competencies"
+        Then I should see "Identify competencies"
         When I follow "Add Competency"
-        When I fill in the following attributes
-          |Knowledge and or experience in pizza baking|
+        When I press "Save competencies"
+        Then I should see "Competencies have been successfully updated"

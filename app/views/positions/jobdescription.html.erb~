@@ -15,7 +15,7 @@
           <div class="item">
             <%= render "jobdescription_nav" %>
           </div>
-          <div>
+          <div class="item">
             <%= render "positions/wikis/job_description_wiki" %>
           </div>
         </div>

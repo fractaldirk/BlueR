@@ -1,17 +1,101 @@
-<ul class="nav nav-tabs" id="Tab6">
-  <li class="active"><a href="#jobcompetencies" data-toggle="tab">Job related competencies</a></li>
-  <li><a href="#personalcompetencies" data-toggle="tab">Personal Competencies</a></li>
-</ul>
+<h2>Competencies</h2>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="jobcompetencies">
-    <%= render 'competenciestab1' %>
-  </div>
-  <div class="tab-pane" id="personalcompetencies">
-    <%= render 'competenciestab2' %>
-  </div>
-</div>
+<hr />
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th width="800pt"><p>Functional competencies</p></th>
+        <th width="50pt"><p align="middle">CI</p></th>
+        <th width="50pt"><p align="middle">RPL</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "F" %>
+            <p style = "height: 10pt"><%=h competency.competencies %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "F" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_cpv %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "F" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_value %></p><hr />
+            <% end %><% end %></td>
+      </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th width="800pt"><p>Method related competencies</p></th>
+        <th width="50pt"><p align="middle">CI</p></th>
+        <th width="50pt"><p align="middle">RPL</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "M" %>
+            <p style = "height: 10pt"><%=h competency.competencies %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "M" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_cpv %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "M" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_value %></p><hr />
+            <% end %><% end %></td>
+      </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th width="800pt"><p>Social / Self competencies</p></th>
+        <th width="50pt"><p align="middle">CI</p></th>
+        <th width="50pt"><p align="middle">RPL</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "S" %>
+            <p style = "height: 10pt"><%= competency.competencies %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "S" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_cpv %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "S" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_value %></p><hr />
+            <% end %><% end %></td>
+      </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th width="800pt"><p>Leadership competencies</p></th>
+        <th width="50pt"><p align="middle">CI</p></th>
+        <th width="50pt"><p align="middle">RPL</p></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="800pt"><% for competency in @position.competencies %><% if competency.competency_options == "L" %>
+            <p style = "height: 10pt"><%=h competency.competencies %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "L" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_cpv %></p><hr />
+            <% end %><% end %></td>
+        <td><% for competency in @position.competencies %><% if competency.competency_options == "L" %>
+            <p style = "height: 10pt" align="middle"><%=h competency.competency_value %></p><hr />
+            <% end %><% end %></td>
+      </tr>
+    </tbody>
+</table>
 
 <br />
-<%= link_to 'Edit', editcompetencies_position_path(@position) %> |
 <%= link_to 'Back', @position %>
