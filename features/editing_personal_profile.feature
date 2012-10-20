@@ -1,8 +1,8 @@
-Feature: edit and create competencies
+Feature: edit job description
 Given I am on the home page
-And I want to edit or create competencies
+And I want to edit a position
 When I follow an existing position
-Then I should be able to edit or create competencies
+Then I should be able to edit the job description of the position
 
   Background: Creating new position
     Given I am on the home page
@@ -18,13 +18,6 @@ Then I should be able to edit or create competencies
     Then I should see "Listing positions"
     And I should see "Captain America"
 
-      Scenario: Create competencies
+      Scenario: Fill in a personal profile
         When I follow "Captain America"
         Then I should see "Job Description"
-        When I follow image link "Personal_profile"
-        Then I should see "Functional competencies"
-        When I follow "Edit"
-        Then I should see "Identify competencies"
-        When I follow "Add Competency"
-        When I press "Save competencies"
-        Then I should see "Competencies have been successfully updated"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121015113029) do
+ActiveRecord::Schema.define(:version => 20121020220633) do
 
   create_table "comments", :force => true do |t|
     t.string   "idea_commenter"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20121015113029) do
     t.string   "gender_string"
     t.string   "residential_status_string"
     t.string   "department"
+    t.string   "type_contract"
   end
 
   create_table "posts", :force => true do |t|

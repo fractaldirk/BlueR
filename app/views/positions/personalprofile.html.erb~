@@ -1,4 +1,4 @@
-<body class="redie">
+<body>
 
   <div id="personalprofilecarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
@@ -6,15 +6,17 @@
         <a class="carousel-control left" id="carouselleft" href="#personalprofilecarousel" data-slide="prev">&lsaquo;</a>
         <br />
       </div>
-        <div class="span9">
+        <div class="span10">
           <div class="active item">
+            <%= link_to 'Edit', editpersonalprofile_position_path(@position), :class => "btn btn-danger", :id => "edit_button" %>
+            <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
             <%= render "personal_profile" %>
           </div>
           <div class="item">
             <%= render "personal_profile_nav" %>
           </div>
         </div>
-        <div class="span2">
+        <div class="span1">
         <a class="carousel-control right" id="carouselright" href="#personalprofilecarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>

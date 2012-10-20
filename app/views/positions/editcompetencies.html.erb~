@@ -14,10 +14,10 @@
             <%= render "form_competencies" %>
           </div>
           <div class="item">
-
+            <%= render "positions/wikis/form_competencies_wiki" %>
           </div>
           <div class="item">
-
+            <%= render "helper_competencies" %>
           </div>
         </div>
         <div class="span1">

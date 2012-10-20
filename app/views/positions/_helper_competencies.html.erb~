@@ -1,0 +1,19 @@
+<h1>Current responsibilities for <%= @position.job_title %></h1>
+<hr />
+
+  <p><h3>MAJOR FUNCTIONS / RESPONSIBILITIES</h3></p>
+    <b><u>Conceptual tasks, Strategy Development and/or Project Development</u></b>
+  <fieldset>
+    <%= simple_format @position.conceptual %><br/>
+  </fieldset>
+
+    <b><u>Implementation</u></b>
+  <fieldset>
+    <%= simple_format @position.implementation %><br/>
+  </fieldset>
+
+    <b><u>Support/Coaching/Leadership</u></b>
+  <fieldset>
+      <%= simple_format @position.support %><br/>
+  </fieldset>
+<br />

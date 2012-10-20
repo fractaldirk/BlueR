@@ -1,62 +1,60 @@
-<div class="accordion" id="accordion4">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalgeneral">
-        Overal information
-      </a>
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+      <% @position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
-    <div id="personalgeneral" class="accordion-body collapse in">
-      <div class="accordion-inner">
-    <div class="field">
-	      <%= f.label :name %><br />
-    	  <%= f.text_field :name %>
-    </div>
+  <% end %>
 
-  	<div class="field">
-    	  <%= f.label :picture, "HR Picture" %><br />
-    	  <%= f.select(:picture, [['Select Avenger', 'nopictureyet'],['Steve Rogers (Moralist)', 'Steve Rogers'], ['Anthony Stark (Scientist)', 'Anthony Stark']]) %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :date_birth %><br />
-    	  <%= f.date_select(:date_birth, :order => [:day, :month, :year], :start_year => 1930, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :gender_string %><br />
-    	  <%= f.select(:gender_string, [['Female', 'Female'], ['Male', 'Male']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :nationality_string %><br />
-    	  <%= f.select(:nationality_string, [['Dutch', 'Dutch'], ['German', 'German']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :residential_status_string %><br />
-    	  <%= f.select(:residential_status_string, [['Permanent Residence Status', 'Permanent Residence Status'], ['Visa', 'Visa']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :start_date %><br />
-    	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :start_year => 1972, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
-  	</div>
-      </div>
-    </div>
+  <div class="field">
+	  <%= f.label :name %><br />
+	  <%= f.text_field :name %>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalexperience">
-        Personal Development (Notes)
-      </a>
-    </div>
-    <div id="personalexperience" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :personal_development, "Personal Development Notes" %><br />
-    	  <%= f.text_area :personal_development, :style => "width: 600pt;" "height: 250pt;" %>
-  	</div>
-      </div>
-    </div>
+
+	<div class="field">
+	  <%= f.label :date_birth, "Date of Birth" %><br />
+	  <%= f.date_select(:date_birth, :order => [:day, :month, :year], :start_year => 1930, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
+	</div>
+
+	<div class="field">
+	  <%= f.label :gender_string, "Gender" %><br />
+	  <%= f.select(:gender_string, [['Female', 'Female'], ['Male', 'Male']], :prompt => 'Please select') %>
+	</div>
+
+	<div class="field">
+	  <%= f.label :nationality_string, "Nationality" %><br />
+	  <%= f.select(:nationality_string, [['Dutch', 'Dutch'], ['German', 'German']], :prompt => 'Please select') %>
+	</div>
+
+	<div class="field">
+	  <%= f.label :residential_status_string, "Visa status" %><br />
+	  <%= f.select(:residential_status_string, [['Permanent Residence Status', 'Permanent Residence Status'], ['Visa', 'Visa']], :prompt => 'Please select') %>
+	</div>
+
+	<div class="field">
+	  <%= f.label :start_date, "Start Date (of employement)" %><br />
+	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :start_year => 1972, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
+	</div>
+<hr />
+<p><i>This is a <span><b><%= @position.permanent_outcome %></b></span> position for <span><b><%= @position.fte %></b></span> FTE</i></p>
+
+	<div>
+	  <%= f.label :type_contract, "Type of contract" %>
+	  <%= f.select(:type_contract, [['Flexible'], ['1 year fixed'], ['Indefinite fixed']], :prompt => 'Contract') %>
+	</div>
+<hr />
+  <h4>Personal Development (Notes)</h4>
+  <div>
+	  <%= f.label :personal_development, "Personal Development Notes" %><br />
+	  <%= f.text_area :personal_development, :style => "width: 600pt;" "height: 250pt;", :placeholder => 'Please list here any notes towards the personal development of the employee' %>
+	</div>
+
+  <div class="actions">
+   <%= f.submit "Save Personal Profile", :name => "personal_profile_button", :class => 'btn btn-success', :id => 'submit_button' %>
   </div>
-</div>
+<% end %>

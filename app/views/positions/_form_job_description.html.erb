@@ -48,7 +48,7 @@
 
   	<div class="field">
     	  <%= f.label :specific_work_env, "Specific Work Environment" %><br />
-    	  <%= f.text_area :specific_work_env, :style => "width: 600pt;" "height: 250pt;" %>
+    	  <%= f.text_area :specific_work_env, :style => "width: 600pt;" "height: 250pt;", :placeholder => "(for example: office based in ..., availability outside working hours, travels, outdoor working conditions ...)" %>
   	</div>
   </div>
 
@@ -60,24 +60,24 @@
 
   	<div class="field">
     	  <%= f.label :scope %><br />
-    	  <%= f.text_area :scope, :style => "width: 600pt;" "height: 250pt;" %>
+    	  <%= f.text_area :scope, :style => "width: 600pt;" "height: 250pt;", :placeholder => "For example: how many projects a year, how many database entries to be managed, how many invoices to record, how many coordination meetings, how many staff to manage, managed budget magnitude, which interactions with other departments.." %>
   	</div>
   </div>
 
   <div class="tab-pane" id="responsibilities">
       <div class="field">
-        <%= f.label :conceptual, "Conceptual responsibilities" %><br />
-    	  <%= f.text_area :conceptual, :style => "width: 600pt;" "height: 250pt;" %>
+        <%= f.label :conceptual, "Conceptual tasks, Strategy Development and/or Project Development" %><br />
+    	  <%= f.text_area :conceptual, :style => "width: 600pt;" "height: 250pt;", :placeholder => "(study, analyze, design, research, observe, discover, diagnose, anticipate, inventory, understand, learn, invent ...)" %>
     </div>
 
     <div class="field">
-    	  <%= f.label :implementation, "Implementational responsibilities" %><br />
-    	  <%= f.text_area :implementation, :style => "width: 600pt;" "height: 250pt;" %>
+    	  <%= f.label :implementation, "Implementation" %><br />
+    	  <%= f.text_area :implementation, :style => "width: 600pt;" "height: 250pt;", :placeholder => "(implement, make, utilize, program, calculate, experiment, renew, determine, regulate, secure, solve, select, apply, change ...)" %>
   	</div>
 
     <div class="field">
-    	  <%= f.label :support, "Supportive responsibilities" %><br />
-    	  <%= f.text_area :support, :style => "width: 600pt;" "height: 250pt;" %>
+    	  <%= f.label :support, "Support / Coaching / Leadership" %><br />
+    	  <%= f.text_area :support, :style => "width: 600pt;" "height: 250pt;", :placeholder => "(animate, lead, train, inform, coordinate, entrust, sell, consult, guide, manage, initiate, delegate, recommend, support ...)" %>
   	</div>
   </div>
 

@@ -1,82 +1,28 @@
-<%= form_for(@position) do |f| %>
-  <% if @position.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+<body>
+  <div id="myCarousel" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <h4>Employee information (for <%= @position.job_title %>)</h4>
+            <hr />
+            <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
+            <%= link_to 'Back', personalprofile_position_path, :class => "btn btn-action", :id => "edit_button" %>
+            <%= render "form_personal_profile" %>
+          </div>
+          <div class="item">
 
-      <ul>
-      <% @position.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          </div>
+          <div class="item">
 
-<div class="accordion" id="accordion4">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalgeneral">
-        Overal information
-      </a>
-    </div>
-    <div id="personalgeneral" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <div class="field">
-	  <%= f.label :name %><br />
-    	  <%= f.text_field :name %>
+          </div>
         </div>
-
-  	<div class="field">
-    	  <%= f.label :picture, "HR Picture" %><br />
-    	  <%= f.select(:picture, [['Select Avenger', 'nopictureyet'],['Steve Rogers (Moralist)', 'Steve Rogers'], ['Anthony Stark (Scientist)', 'Anthony Stark']]) %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :date_birth %><br />
-    	  <%= f.date_select(:date_birth, :order => [:day, :month, :year], :start_year => 1930, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :gender_string %><br />
-    	  <%= f.select(:gender_string, [['Female', 'Female'], ['Male', 'Male']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :nationality_string %><br />
-    	  <%= f.select(:nationality_string, [['Dutch', 'Dutch'], ['German', 'German']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :residential_status_string %><br />
-    	  <%= f.select(:residential_status_string, [['Permanent Residence Status', 'Permanent Residence Status'], ['Visa', 'Visa']], :prompt => 'Please select') %>
-  	</div>
-
-  	<div class="field">
-    	  <%= f.label :start_date %><br />
-    	  <%= f.date_select(:start_date, :order => [:day, :month, :year], :start_year => 1972, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %>
-  	</div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>
   </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#personalexperience">
-        Personal Development (Notes)
-      </a>
-    </div>
-    <div id="personalexperience" class="accordion-body collapse">
-      <div class="accordion-inner">
-        <div class="field">
-    	  <%= f.label :personal_development, "Personal Development Notes" %><br />
-    	  <%= f.text_area :personal_development, :style => "width: 600pt;" "height: 250pt;" %>
-  	</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class="actions">
-    <%= f.submit "Save Personal Profile", :name => "personal_profile_button" %>
-  </div>
-<% end %>
-<br />
-<%= link_to "Back", personalprofile_position_path %>|
+</body>
