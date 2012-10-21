@@ -1,4 +1,4 @@
-<h1>New Zealand positions(<%= Position.count(:conditions => "office = 2") %>)</h1>
+<h1>United Kingdom positions(<%= Position.count(:conditions => "office = 2") %>)</h1>
 
 <%= render 'positions/unitedkingdom/index_dropdown' %><br />
 

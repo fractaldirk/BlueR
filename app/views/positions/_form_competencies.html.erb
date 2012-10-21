@@ -14,7 +14,7 @@
   <div>
     <%= f.fields_for :competencies do |builder| %>
       <fieldset>
-        <%= builder.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', :placeholder => 'autocomplete dictionary for assistance', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies)} %>
+        <%= builder.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', :placeholder => 'autocomplete dictionary for assistance', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies).uniq} %>
         <%= builder.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
         <%= builder.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
         <%= builder.select(:competency_options, [['F'],['M'],['L'],['S']], { :prompt => "TBD"}, :style => "width: 60pt;") %>

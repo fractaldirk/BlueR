@@ -1,0 +1,5 @@
+<h2>Dictionary</h2>
+
+<% Competency.order(:competencies).map(&:competencies).uniq do |dic| %>
+  <li><%= dic %></li>
+<% end %>

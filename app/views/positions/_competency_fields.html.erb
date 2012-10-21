@@ -1,5 +1,5 @@
 <fieldset>
-  <%= f.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies)} %>
+  <%= f.text_field :competencies, :style => "width: 500pt;", :class => 'auto_search_competency', data: { autocomplete_source: Competency.order(:competencies).map(&:competencies).uniq} %>
   <%= f.select(:competency_cpv, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
   <%= f.select(:competency_value, [['1'],['2'],['3'],['4']], { :prompt => "0"}, :style => "width: 32pt;") %>
   <%= f.select(:competency_options, [['F'],['M'],['L'],['P']], { :prompt => "TBD"}, :style => "width: 60pt;") %>

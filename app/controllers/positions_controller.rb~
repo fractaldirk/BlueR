@@ -3,7 +3,7 @@ class PositionsController < ApplicationController
   # GET /positions.json
   def index
     @search = Position.search(params[:q])
-    @positions = @search.result.find(:all, :order => 'core DESC, status')
+    @positions = @search.result
     @posts = Post.all
 
     respond_to do |format|
@@ -136,9 +136,8 @@ class PositionsController < ApplicationController
     @posts = Post.all
 
     respond_to do |format|
-      format.html { render html: positions_newzealand_path }
-      format.json { render json: positions_newzealand_path }
-
+      format.html { render html: positions_international_path }
+      format.json { render json: positions_international_path }
     end
   end
 
@@ -164,6 +163,11 @@ class PositionsController < ApplicationController
       format.json { render json: positions_newzealand_path }
 
     end
+  end
+
+  def dictionary
+    @positions = Position.all
+    @competencies = Competency.all
   end
 
 end

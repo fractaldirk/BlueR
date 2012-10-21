@@ -15,4 +15,14 @@ def status
   end
 end
 
+def permanent_outcome
+  if permanent == true
+    "permanent"
+  elsif permanent == false
+    "temporarily"
+  else
+    "undefined"
+  end
+end
+
 end

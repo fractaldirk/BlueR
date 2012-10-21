@@ -136,9 +136,8 @@ class PositionsController < ApplicationController
     @posts = Post.all
 
     respond_to do |format|
-      format.html { render html: positions_newzealand_path }
-      format.json { render json: positions_newzealand_path }
-
+      format.html { render html: positions_international_path }
+      format.json { render json: positions_international_path }
     end
   end
 
@@ -164,6 +163,11 @@ class PositionsController < ApplicationController
       format.json { render json: positions_newzealand_path }
 
     end
+  end
+
+  def dictionary
+    @positions = Position.all
+
   end
 
 end

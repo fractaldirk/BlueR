@@ -25,4 +25,11 @@ def permanent_outcome
   end
 end
 
+def job_title_int
+  if office == 1
+    job_title
+  else
+    ""
+  end
+end
 end

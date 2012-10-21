@@ -1,4 +1,4 @@
-  <h1>Listing positions</h1><%= render 'positions/dropdown_offices' %><br />
+<h1>Listing positions</h1><%= render 'positions/dropdown_offices' %><br />
 
 <%= link_to 'New Position', new_position_path %>
 <hr />
@@ -6,9 +6,9 @@
 <div>
   <table class="search_table">
     <tr>
-      <td style="width: 100pt"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:job_title).map(&:job_title)} %></td>
+      <td style="width: 100pt"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:job_title).map(&:job_title).uniq} %></td>
       <td><%= f.text_field :name_cont, :class => 'auto_search_name', :placeholder => 'Name', data: { autocomplete_source: Position.order(:name).map(&:name)} %></td>
-      <td><%= f.select(:department, Position.order(:department).map(&:department), :prompt => "department") %></td>
+      <td><%= f.select(:department_cont, Position.order(:department).map(&:department).uniq, :prompt => "department") %></td>
       <td><div class="action"><%= link_to_submit image_tag('search.jpg') %></div></td>
     </tr>
   </table>
