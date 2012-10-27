@@ -1,7 +1,5 @@
 <h2>Job Description</h2>
 
-<%= link_to 'Edit', editjobdescription_position_path(@position), :class => "btn btn-danger", :id => "edit_button"%>
-<%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
 
 <fieldset>
   <dl class="dl-horizontal">

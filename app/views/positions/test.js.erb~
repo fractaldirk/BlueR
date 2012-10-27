@@ -1,0 +1,6 @@
+$('#test').hide().after('<%= j render 'test' %>')
+  $('#testie').hide()
+;
+$('#close').hide().after('<%= j render 'index_positions' %>')
+  $('#testip').hide()
+;

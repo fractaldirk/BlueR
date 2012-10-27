@@ -15,26 +15,3 @@
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require_tree .
-
-
-  $(function() {
-    $(document).on("focus",".competency", function() {
-        $('.competency').autocomplete({
-            source: ['Knowlegde and/or experience', 'Demonstrated ability in', 'Knowledge and understanding of the NGO sector', 'Identification with Greenpeace goals and supportive of Greenpeace values', 'Commitment to', 'Being a team player', 'Planning & Organizing', 'Empowering & Developing People', 'Strategic Orientation and Managing Vision']
-        });
-    });
-  })
-
-  $(function() {
-    $(document).on("focus",".attitude", function() {
-        $('.attitude').autocomplete({
-            source: ['Identification with Greenpeace goals and supportive of Greenpeace values', 'Commitment to', 'Autonomous', 'Stress resistance', '(self) motivated', 'Integrative thinker', 'Confidential (to sensitive information)', 'Flexible', 'Positive thinker', 'Eager to learn', 'Eager to teach', 'Tenacious', 'Collaborative', 'Enthusiastic', 'Discrete', 'Proactive']
-        });
-    });
-  })
-
-  $(function() {
-   $('#flash').delay(500).fadeIn('normal', function() {
-      $(this).delay(2500).fadeOut();
-   });
-  });​

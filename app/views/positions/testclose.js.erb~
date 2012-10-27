@@ -1,0 +1,3 @@
+$('#close').hide().after('<%= j render "index_nav" %>')
+  $('#testy').hide()
+;

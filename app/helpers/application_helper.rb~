@@ -7,4 +7,23 @@ module ApplicationHelper
     end
     link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def link_to_submit(text)
+  link_to_function text, "$(this).closest('form').submit()"
+  end
+
+  def specific_office_path
+    number_path = Position.find(params[@position.office])
+    if number_path = 1
+      positions_international_path
+    elsif number_path = 2
+      positions_unitedkingdom_path
+    elsif number_path = 3
+      positions_netherlands_path
+    elsif number_path = 4
+      positions_newzealand_path
+    elsif
+      positions_path
+    end
+  end
 end

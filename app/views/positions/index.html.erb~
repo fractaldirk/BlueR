@@ -7,7 +7,6 @@
       </div>
         <div class="span10">
           <div class="active item">
-            <%= image_tag 'founders.jpg' %>
             <%= render "index_positions" %>
           </div>
           <div class="item">

@@ -1,0 +1,5 @@
+<div id="testip">
+  <h4>TEST RENDER PARTIAL</h4>
+</div>
+
+<%= link_to 'personal', positions_path %>
