@@ -9,7 +9,11 @@
     <h5>(<%= @post.idea_name %>)</h5>
 
   <hr />
-    <%= current_user.email %>
+
+  <%= render 'projects/participants'
+
+  <%= render 'projects/form' %>
+
   <p>
     <%= simple_format @post.idea_body %>
   </p>

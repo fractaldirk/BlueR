@@ -3,6 +3,7 @@ BlueRobin1::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    resources :projects
   end
 
   get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"

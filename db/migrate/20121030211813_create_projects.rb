@@ -1,0 +1,13 @@
+class CreateProjects < ActiveRecord::Migration
+  def change
+    create_table :projects do |t|
+      t.string :name
+      t.string :email
+      t.string :office
+      t.references :post
+
+      t.timestamps
+    end
+    add_index :projects, :post_id
+  end
+end

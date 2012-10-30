@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030192647) do
+ActiveRecord::Schema.define(:version => 20121030213902) do
 
   create_table "comments", :force => true do |t|
     t.string   "idea_commenter"
@@ -98,6 +98,17 @@ ActiveRecord::Schema.define(:version => 20121030192647) do
     t.text     "idea_body"
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "office"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "projects", ["post_id"], :name => "index_projects_on_post_id"
+
   create_table "socials", :force => true do |t|
     t.string   "social_name"
     t.integer  "social_cpv"
@@ -126,6 +137,7 @@ ActiveRecord::Schema.define(:version => 20121030192647) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.integer  "user_office"
+    t.string   "user_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

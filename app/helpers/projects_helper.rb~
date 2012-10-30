@@ -1,0 +1,9 @@
+module ProjectsHelper
+  def projectos
+    if Post.project.name == current_user.user_name
+      true
+    else
+      false
+    end
+  end
+end

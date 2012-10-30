@@ -1,0 +1,11 @@
+<%= form_for([@post, @post.projects.build]) do |f| %>
+  <div class="field">
+    <%= f.hidden_field :name, :value => project_user_name %>
+    <%= f.hidden_field :email, :value => project_email %>
+    <%= f.hidden_field :office, :value => project_office %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Join this project!", confirm: 'Please make sure you only join once. Would you like to continue?', :id => 'join_project_button', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

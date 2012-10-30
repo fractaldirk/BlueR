@@ -1,10 +1,6 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label :idea_commenter, "Name" %><br />
-    <%= f.text_field :idea_commenter %>
-  </div>
-  <div class="field">
-    <%= f.label :idea_comment, "Comment/Idea" %><br />
+    <%= f.hidden_field :idea_commenter, :value => commenter %><br/>
     <%= f.text_area :idea_comment, :style => "width: 600pt; height: 150pt;" %>
   </div>
   <div class="actions">

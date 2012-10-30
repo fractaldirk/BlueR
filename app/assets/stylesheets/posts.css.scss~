@@ -6,7 +6,7 @@
   font-size: 12px;
   background-color: #DDD;
   padding: 0 20px;
-  width: 500px;
+  width: 550px;
   border: solid 1px #333;
 }
 
@@ -21,4 +21,10 @@
 
 .comment:last-child {
   border-bottom: none;
+}
+
+#join_project_button {
+  position:fixed;
+  top:125px;
+  right:275px;
 }

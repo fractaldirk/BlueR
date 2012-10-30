@@ -1,4 +1,14 @@
 module PostsHelper
+  def display_project
+    arr = @post.projects.each do |comment|
+      if arr.select {|s| s.include? 'current_user.user_name'}
+        project.name
+      else
+        "form"
+      end
+    end
+  end
+
   def project_user_name
     current_user.user_name
   end

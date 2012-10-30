@@ -1,0 +1,7 @@
+<h5>Contributors:</h5>
+<% @post.projects.each do |project| %>
+  <%= project.name %>,
+  <%= link_to 'Remove participation', [project.post, project],
+               :confirm => 'Are you sure you that you would no longer like to participate in this project anymore?',
+               :method => :delete %>
+<% end %>

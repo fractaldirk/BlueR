@@ -1,0 +1,7 @@
+class ProjectsController < ApplicationController
+  def create
+    @post = Post.find(params[:post_id])
+    @project = @post.projects.create(params[:project])
+    redirect_to post_path(@post)
+  end
+end

@@ -6,4 +6,5 @@ validates :idea_title, :presence => true,
 validates_presence_of :idea_body
 
 has_many :comments, :dependent => :destroy
+has_many :projects, :dependent => :destroy
 end

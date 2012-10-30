@@ -1,4 +1,6 @@
 BlueRobin1::Application.routes.draw do
+  devise_for :users
+
   resources :posts do
     resources :comments
   end
@@ -8,7 +10,6 @@ BlueRobin1::Application.routes.draw do
   get 'positions/netherlands' => 'positions#netherlands', :controller => "positions"
   get 'positions/unitedkingdom' => 'positions#unitedkingdom', :controller => "positions"
   get 'positions/dictionary' => 'positions#dictionary', :controller => "positions"
-  get 'positions/test'
 
   resources :positions do
       member do
