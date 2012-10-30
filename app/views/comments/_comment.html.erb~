@@ -1,10 +1,10 @@
 <legend>
-  <p>
-    (<%= comment.idea_commenter %> said:)
-    <%= simple_format comment.idea_comment %>
-  </p>
-
-  <p>
+<div class="comment" data-time="<%= comment.created_at.to_i %>">
+  <strong><%= comment.idea_commenter %></strong>
+  <em><p>on <%= comment.created_at.strftime('%d %b, %Y at %I:%M %p') %></p></em>
+  <%= simple_format comment.idea_comment %>
+</div>
+<p>
     <%= link_to 'Destroy Comment', [comment.post, comment],
                  :confirm => 'Are you sure?',
                  :method => :delete %>

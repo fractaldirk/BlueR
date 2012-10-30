@@ -5,19 +5,24 @@
 
 <div class="span10">
 
-    <h1 style="color: green"><%= @post.idea_title %> (<%= @post.comments.count %>)</h1>
+    <h1 style="color: black"><%= @post.idea_title %> (<%= @post.comments.count %>)</h1>
     <h5>(<%= @post.idea_name %>)</h5>
 
   <hr />
-
+    <%= current_user.email %>
   <p>
     <%= simple_format @post.idea_body %>
   </p>
   <hr />
 
-  <h4>Comments</h4>
+  <% unless @post.comments.empty? %>
+    <h2><%= pluralize(@post.comments.size, 'comment') %></h2>
   <hr />
-  <%= render @post.comments %>
+  <div id="comments">
+    <%= render @post.comments %>
+  </div>
+
+  <% end %>
 
   <h6>Add a comment:</h6>
   <%= render "comments/form" %>
