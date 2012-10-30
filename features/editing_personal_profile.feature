@@ -21,3 +21,11 @@ Then I should be able to edit the job description of the position
       Scenario: Fill in a personal profile
         When I follow "Captain America"
         Then I should see "Job Description"
+        When I follow image link "Personal_profile"
+        Then I should see "Personal Profile"
+        When I follow "Edit"
+        Then I should see "Employee information"
+        When I fill in "Name" with "Steve Rogers"
+        When I press "Save Personal Profile"
+        Then I should see "Personal profile have been successfully updated"
+        And I should see "Steve Rogers"
