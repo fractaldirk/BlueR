@@ -2,14 +2,10 @@ class PositionsController < ApplicationController
   # GET /positions
   # GET /positions.json
   def index
-    @search = Position.search(params[:q])
-    @positions = @search.result
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @positions }
-      format.json { render json: @posts }
+    if user_signed_in?
+      redirect_to home_page_path
+    else
+      redirect_to new_user_session_path
     end
   end
 
@@ -172,6 +168,20 @@ class PositionsController < ApplicationController
       format.html { render html: positions_dictionary_path }
       format.json { render json: positions_dictionary_path }
 
+    end
+  end
+
+  def home_page_path
+    if @current_user.user_office == 1
+      positions_international_path
+    elsif @current_user.user_office == 2
+      positions_unitedkingdom_path
+    elsif @current_user.user_office == 3
+      positions_netherlands_path
+    elsif @current_user.user_office == 4
+      positions_newzealand_path
+    elsif
+      positions_path
     end
   end
 end

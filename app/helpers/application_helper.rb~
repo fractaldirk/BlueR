@@ -12,18 +12,18 @@ module ApplicationHelper
   link_to_function text, "$(this).closest('form').submit()"
   end
 
-  def specific_office_path
-    number_path = Position.find(params[@position.office])
-    if number_path = 1
+  def home_page_path
+    if @current_user.user_office == 1
       positions_international_path
-    elsif number_path = 2
+    elsif @current_user.user_office == 2
       positions_unitedkingdom_path
-    elsif number_path = 3
+    elsif @current_user.user_office == 3
       positions_netherlands_path
-    elsif number_path = 4
+    elsif @current_user.user_office == 4
       positions_newzealand_path
     elsif
       positions_path
     end
   end
+
 end
