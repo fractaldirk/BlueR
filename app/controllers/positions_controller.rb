@@ -166,8 +166,12 @@ class PositionsController < ApplicationController
   end
 
   def dictionary
-    @positions = Position.all
+    @competencies = Competency.all
 
+    respond_to do |format|
+      format.html { render html: positions_dictionary_path }
+      format.json { render json: positions_dictionary_path }
+
+    end
   end
-
 end

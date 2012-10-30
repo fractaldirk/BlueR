@@ -166,8 +166,9 @@ class PositionsController < ApplicationController
   end
 
   def dictionary
-    @positions = Position.all
     @competencies = Competency.all
+
+    render json: Competency.order(:competencies).map(&:competencies).uniq!.join(', ')
   end
 
 end
