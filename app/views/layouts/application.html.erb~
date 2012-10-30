@@ -20,7 +20,7 @@
   <% end %>
 
   <div id="login_position">
-    <%= render 'layouts/login' %>
+    <%= link_to 'Sign up', new_user_registration_path %>
   </div>
 
 <%= yield %>
