@@ -7,8 +7,10 @@
       </div>
         <div class="span10">
           <div class="active item">
+          <% unless manage_edits == false %>
             <%= link_to 'Edit', editcompetencies_position_path(@position), :class => 'btn btn-danger', :id => 'edit_button' %>
-            <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
+          <% end %>
+            <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
             <%= render "competencies_competencies" %>
           </div>
           <div class="item">

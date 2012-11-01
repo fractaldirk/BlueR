@@ -1,7 +1,5 @@
 <h1>Dutch positions(<%= Position.count(:conditions => "office = 3") %>)</h1>
 
-<%= render 'positions/netherlands/index_dropdown' %><br />
-
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_netherlands_path do |f| %>
@@ -24,7 +22,7 @@
     <th><%= sort_link @search, :job_title, "Job title" %></th>
     <th><%= sort_link @search, :department, "Department" %></th>
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
-    <th>"Status"</th>
+    <th>Status</th>
     <th>Edit</th>
     <th>Destroy</th>
   </tr>
@@ -35,8 +33,11 @@
     <td><%= position.department %></td>
     <td><%= position.valid_from.strftime("%d %B %Y") unless position.valid_from.nil? %></td>
     <td><%= position.status %></td>
-    <td><%= link_to 'Edit', edit_position_path(position) %></td>
-    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
+    <% unless manage_edits == false %>
+      <td><%= link_to 'Edit', edit_position_path(position) %></td>
+      <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
+
   </tr>
       <% end %>
     <% end %>

@@ -1,7 +1,5 @@
 <h1>Dutch positions(<%= Position.count(:conditions => "office = 3") %>)</h1>
 
-<%= render 'positions/netherlands/index_dropdown' %><br />
-
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_netherlands_path do |f| %>

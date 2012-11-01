@@ -1,8 +1,8 @@
 <body>
-  <div id="myCarousel" class="carousel slide" data-interval="false">
+  <div id="livescreen" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
       <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control left" id="carouselleft" href="#livescreen" data-slide="prev">&lsaquo;</a>
         <br />
       </div>
         <div class="span10">
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        <a class="carousel-control right" id="carouselright" href="#livescreen" data-slide="next">&rsaquo;</a>
         </div>
     </div>
   </div>

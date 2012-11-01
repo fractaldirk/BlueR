@@ -1,0 +1,24 @@
+<body>
+  <div id="selly" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#selly" data-slide="prev">&lsaquo;</a>
+        <br />
+      </div>
+        <div class="span10">
+          <div class="active item">
+            <%= render "index_content" %>
+          </div>
+          <div class="item">
+            <%= render "positions/netherlands/index_positions" %>
+          </div>
+          <div class="item">
+            <%= render "positions/netherlands/index_nav" %>
+          </div>
+        </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#selly" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+  </div>
+</body>

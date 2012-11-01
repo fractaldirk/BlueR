@@ -1,7 +1,5 @@
 <h1>GPI positions(<%= Position.count(:conditions => "office = 1") %>)</h1>
 
-<%= render 'positions/international/index_dropdown' %><br />
-
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_international_path do |f| %>

@@ -1,9 +1,9 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <div class="field">
-    <%= f.hidden_field :idea_commenter, :value => commenter %><br/>
+    <%= f.hidden_field :idea_commenter, :value => commenter %>
     <%= f.text_area :idea_comment, :style => "width: 600pt; height: 150pt;" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit, :class => "btn btn-success" %>
   </div>
 <% end %>

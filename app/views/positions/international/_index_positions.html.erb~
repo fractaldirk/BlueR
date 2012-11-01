@@ -24,7 +24,7 @@
     <th><%= sort_link @search, :job_title, "Job title" %></th>
     <th><%= sort_link @search, :department, "Department" %></th>
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
-    <th><%= sort_link @search, :status, "Status" %></th>
+    <th>Status</th>
     <th>Edit</th>
     <th>Destroy</th>
   </tr>

@@ -1,7 +1,5 @@
 <h1>New Zealand positions(<%= Position.count(:conditions => "office = 4") %>)</h1>
 
-<%= render 'positions/newzealand/index_dropdown' %><br />
-
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_newzealand_path do |f| %>

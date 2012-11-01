@@ -18,4 +18,14 @@ module PostsHelper
       "New Zealand"
     end
   end
+
+  def manage_projects
+    if @post.idea_name == current_user.user_name
+      true
+    elsif current_user.user_office == 5
+      true
+    else
+      false
+    end
+  end
 end

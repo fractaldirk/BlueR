@@ -1,28 +1,15 @@
-<body class="pizza2">
+<div class="span1">
 
-<p class="logotextindex"><%= link_to image_tag("bluerobintext.png", :border=>4) %></p>
+</div>
 
-  <div id="knowledgecenterindex" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#knowledgecenterindex" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="item">
-            <%= render "positions/index_positions" %>
-          </div>
-          <div class="item">
-            <%= render "positions/index_nav" %>
-          </div>
-          <div class="active item">
-            <%= render "posts/index_content" %>
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#knowledgecenterindex" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
-  </div>
+<div class="span10">
+  <% unless manage_projects == false %>
+  <%= link_to 'Edit', editpersonalprofile_position_path(@position), :class => "btn btn-danger", :id => "edit_button" %>
+<% end %>
+  <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
+  <%= render "index_content" %>
+</div>
 
-</body>
+<div class="1">
+
+</div>

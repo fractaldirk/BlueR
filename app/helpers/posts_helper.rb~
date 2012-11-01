@@ -1,14 +1,4 @@
 module PostsHelper
-  def display_project
-    arr = @post.projects.each do |comment|
-      if arr.select {|s| s.include? 'current_user.user_name'}
-        project.name
-      else
-        "form"
-      end
-    end
-  end
-
   def project_user_name
     current_user.user_name
   end
@@ -26,6 +16,16 @@ module PostsHelper
       "Netherlands"
     elsif current_user.user_office == 4
       "New Zealand"
+    end
+  end
+
+  def manage_projects
+    if @post.office == current_user.user_office
+      true
+    elsif current_user.user_office == 5
+      true
+    else
+      false
     end
   end
 end

@@ -5,7 +5,7 @@ class PositionsController < ApplicationController
     if user_signed_in?
       redirect_to home_page_path
     else
-      redirect_to devise_session_new_path
+      redirect_to new_user_session_path
     end
   end
 
@@ -143,8 +143,8 @@ class PositionsController < ApplicationController
     @posts = Post.all
 
     respond_to do |format|
-      format.html { render html: positions_newzealand_path }
-      format.json { render json: positions_newzealand_path }
+      format.html { render html: positions_unitedkingdom_path }
+      format.json { render json: positions_unitedkingdom_path }
 
     end
   end
@@ -155,8 +155,8 @@ class PositionsController < ApplicationController
     @posts = Post.all
 
     respond_to do |format|
-      format.html { render html: positions_newzealand_path }
-      format.json { render json: positions_newzealand_path }
+      format.html { render html: positions_netherlands_path }
+      format.json { render json: positions_netherlands_path }
 
     end
   end
@@ -180,8 +180,19 @@ class PositionsController < ApplicationController
       positions_netherlands_path
     elsif @current_user.user_office == 4
       positions_newzealand_path
-    elsif
-      positions_path
+    elsif @current_user.user_office == 5
+      positions_livescreen_path
+    end
+  end
+
+  def livescreen
+    @search = Position.search(params[:q])
+    @positions = @search.result
+    @posts = Post.all
+
+    respond_to do |format|
+      format.html { render html: positions_livescreen_path }
+      format.json { render json: positions_livescreen_path }
     end
   end
 end

@@ -3,12 +3,14 @@ BlueRobin1::Application.routes.draw do
 
   resources :posts do
     resources :comments
+    resources :projects
   end
 
   get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"
   get 'positions/international' => 'positions#international', :controller => "positions"
   get 'positions/netherlands' => 'positions#netherlands', :controller => "positions"
   get 'positions/unitedkingdom' => 'positions#unitedkingdom', :controller => "positions"
+  get 'positions/livescreen' => 'positions#index', :controller => "positions"
   get 'positions/dictionary' => 'positions#dictionary', :controller => "positions"
 
   resources :positions do

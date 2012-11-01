@@ -5,27 +5,26 @@
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_newzealand_path do |f| %>
-<table class="table table-bordered ">
-  <tr>
-    <th>Search by</th>
-    <th>Search field</th>
-  </tr>
-  <tr>
-    <td style="width: 90pt"><%= f.label :job_title_cont, "Job title" %></td>
-    <td style="width: 100pt"><%= f.text_field :job_title_cont %></td>
-    <td><div class="action"><%= f.submit "Search" %></div></td>
-  </tr>
-</table>
+<div>
+  <table class="search_table">
+    <tr>
+      <td style="width: 100pt"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:office).where("office = 4", "%#{params[:term]}%").map(&:job_title).uniq} %></td>
+      <td><%= f.text_field :name_cont, :class => 'auto_search_name', :placeholder => 'Name', data: { autocomplete_source: Position.order(:office).where("office = 4", "%#{params[:term]}%").map(&:name).uniq} %></td>
+      <td><%= f.select(:department_cont, Position.order(:office).where("office = 4", "%#{params[:term]}%").map(&:department).uniq, :prompt => "Department") %></td>
+      <td><div class="action"><%= link_to_submit image_tag('search.jpg') %></div></td>
+    </tr>
+  </table>
+</div>
 <% end %>
 
 <hr />
 
-<table class="table table-bordered table-striped">
+<table class="table table-hover">
   <tr>
     <th><%= sort_link @search, :job_title, "Job title" %></th>
     <th><%= sort_link @search, :department, "Department" %></th>
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
-    <th><%= sort_link @search, :status, "Status" %></th>
+    <th>Status</th>
     <th>Edit</th>
     <th>Destroy</th>
   </tr>
