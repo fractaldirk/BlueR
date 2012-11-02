@@ -54,3 +54,7 @@ h1 {
   top:25px;
   right:25px;
 }
+
+.login {
+  background-image:url("eagle.png")
+}
