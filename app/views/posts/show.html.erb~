@@ -12,7 +12,11 @@
 
   <%= render 'projects/participants' %>
 
-  <%= render 'projects/form' %>
+
+  <% unless Project.order(:post_id).where("post_id = post.id").map(&:name).include? current_user.user_name.to_s %>
+    <%= render 'projects/form' %>
+  <% end %>
+
 
   <p>
     <%= simple_format @post.idea_body %>
@@ -32,8 +36,8 @@
   <%= render "comments/form" %>
 
   <% unless manage_projects == false %>
-  <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-danger", :id => "edit_project_button" %>
-<% end %>
+    <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-danger", :id => "edit_project_button" %>
+  <% end %>
 
   <%= link_to 'Back', posts_path, :id => 'back_button', :class => 'btn' %>
 </div>

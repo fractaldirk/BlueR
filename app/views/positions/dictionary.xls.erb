@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="All">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Competency</Data></Cell>
+        <Cell><Data ss:Type="String">Reqested Profiency level</Data></Cell>
+        <Cell><Data ss:Type="String">Competency value</Data></Cell>
+      </Row>
+    <% @competencies.each do |competency| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= competency.competencies %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= competency.competency_cpv %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= competency.competency_value %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+
+  <%= render "positions/dictionaries/international_dictionary" %>
+
+  <%= render "positions/dictionaries/netherlands_dictionary" %>
+
+  <%= render "positions/dictionaries/new_zealand_dictionary" %>
+
+  <%= render "positions/dictionaries/united_kingdom_dictionary" %>
+
+</Workbook>

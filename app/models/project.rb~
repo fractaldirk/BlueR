@@ -1,8 +1,4 @@
 class Project < ActiveRecord::Base
   attr_accessible :name, :email, :office
   belongs_to :post
-
-  def remove_email
-    self.email
-  end
 end

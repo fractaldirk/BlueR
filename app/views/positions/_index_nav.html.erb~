@@ -1,6 +1,14 @@
 <h1>Index Nav</h1><br />
 
 
+<div class="span2">
+  <frameset>
+    <%= link_to image_tag("dictionary.jpg"), positions_dictionary_path %>
+    <h4>Competencies</h4>
+  </fameset>
+</div>
+
+
 <p>Some ideas:</p>
 <ul>
   <li>Salary analysis</li>

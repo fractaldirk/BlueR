@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030213902) do
+ActiveRecord::Schema.define(:version => 20121108231654) do
 
   create_table "comments", :force => true do |t|
     t.string   "idea_commenter"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(:version => 20121030213902) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "competency_options"
+    t.string   "job_title"
+    t.string   "department"
+    t.string   "office"
   end
 
   add_index "competencies", ["position_id"], :name => "index_competencies_on_position_id"

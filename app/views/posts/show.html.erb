@@ -12,7 +12,11 @@
 
   <%= render 'projects/participants' %>
 
-  <%= render 'projects/form' %>
+
+  <% unless Project.order(:post_id).where("post_id = post_id").map(&:name).include? current_user.user_name.to_s %>
+    <%= render 'projects/form' %>
+  <% end %>
+
 
   <p>
     <%= simple_format @post.idea_body %>

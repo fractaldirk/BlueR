@@ -166,8 +166,7 @@ class PositionsController < ApplicationController
 
     respond_to do |format|
       format.html { render html: positions_dictionary_path }
-      format.json { render json: positions_dictionary_path }
-
+      format.xls
     end
   end
 

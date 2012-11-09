@@ -1,4 +1,4 @@
-<body class="pizza2">
+<body id="jobdescription" onload="">
   <div id="myCarousel" class="carousel slide" data-interval="false">
     <div class="carousel-inner">
       <div class="span1">
@@ -10,7 +10,7 @@
             <%= render "positions/international/index_positions" %>
           </div>
           <div class="item">
-            <%= render "positions/international/index_personal_profile" %>
+            <%= render "positions/international/index_nav" %>
           </div>
           <div class="item">
             <%= render "knowledge_center" %>

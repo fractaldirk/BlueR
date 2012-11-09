@@ -25,18 +25,13 @@ def permanent_outcome
   end
 end
 
-def specific_office_path
-    number_path = office
-    if number_path = 1
-      "positions_international"
-    elsif number_path = 2
-      "positions_unitedkingdom"
-    elsif number_path = 3
-      "positions_netherlands"
-    elsif number_path = 4
-      "positions_newzealand"
-    elsif
-      "positions_path"
+def self.to_csv
+  CSV.generate do |csv|
+    csv << collumn_names
+    all.each do |competency|
+      csv << competency.attributes.values_at(*collumn_names)
     end
+  end
 end
+
 end

@@ -1,0 +1,22 @@
+<Worksheet ss:Name="International">
+  <Table>
+    <Row>
+      <Cell><Data ss:Type="String">Competency</Data></Cell>
+      <Cell><Data ss:Type="String">Reqested Profiency level</Data></Cell>
+      <Cell><Data ss:Type="String">Competency value</Data></Cell>
+      <Cell><Data ss:Type="String">Department</Data></Cell>
+      <Cell><Data ss:Type="String">Position</Data></Cell>
+    </Row>
+  <% @competencies.each do |competency| %>
+    <% if competency.office.to_i == 1 %>
+    <Row>
+      <Cell><Data ss:Type="String"><%= competency.competencies %></Data></Cell>
+      <Cell><Data ss:Type="Number"><%= competency.competency_cpv %></Data></Cell>
+      <Cell><Data ss:Type="Number"><%= competency.competency_value %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= competency.department %></Data></Cell>
+      <Cell><Data ss:Type="String"><%= competency.job_title %></Data></Cell>
+    </Row>
+    <% end %>
+  <% end %>
+  </Table>
+</Worksheet>

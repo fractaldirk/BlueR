@@ -19,8 +19,12 @@ module PostsHelper
     end
   end
 
+  def post_id
+    post_id
+  end
+
   def manage_projects
-    if @post.office == current_user.user_office
+    if @post.idea_name == current_user.user_name
       true
     elsif current_user.user_office == 5
       true

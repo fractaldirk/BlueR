@@ -1,18 +1,4 @@
 module PositionsHelper
-  def office_path
-    if current_user.user_office == 1
-      positions_international_path
-    elsif current_user.user_office == 2
-      positions_unitedkingdom_path
-    elsif current_user.user_office == 3
-      positions_netherlands_path
-    elsif current_user.user_office == 4
-      positions_newzealand_path
-    elsif current_user.user_office == 5
-      positions_livescreen_path
-    end
-  end
-
   def manage_edits
     if @position.office == current_user.user_office
       true
@@ -21,5 +7,17 @@ module PositionsHelper
     else
       false
     end
+  end
+
+  def competency_job_title
+    @position.job_title
+  end
+
+  def competency_department
+    @position.department
+  end
+
+  def competency_office
+    @position.office
   end
 end

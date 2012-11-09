@@ -8,4 +8,17 @@ module PositionsHelper
       false
     end
   end
+
+  def competency_job_title
+    @position.job_title
+  end
+
+  def competency_department
+    @position.department
+  end
+
+  def competency_office
+    @position.office
+  end
+
 end
