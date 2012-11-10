@@ -1,0 +1,54 @@
+<%= form_for(@wiki) do |f| %>
+  <% if @wiki.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
+
+      <ul>
+      <% @wiki.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <ul id="myTab" class="nav nav-tabs">
+      <li class="active"><a href="#job_description_wiki" data-toggle="tab">Job description</a></li>
+      <li class=""><a href="#competencies_wiki" data-toggle="tab">Competency profile</a></li>
+      <li class=""><a href="#personal_profile_wiki" data-toggle="tab">Personal profile</a></li>
+      <li class=""><a href="#dictionary_wiki" data-toggle="tab">Dictionary</a></li>
+  </ul>
+
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="job_description_wiki">
+    <div class="field">
+    <%= f.label :job_description_wiki %><br />
+    <%= f.text_area :job_description_wiki, :style => "width: 700pt;" %>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="competencies_wiki">
+    <div class="field">
+      <%= f.label :competencies_wiki %><br />
+      <%= f.text_area :competencies_wiki, :style => "width: 700pt;" %>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="personal_profile_wiki">
+    <div class="field">
+      <%= f.label :personal_profile_wiki %><br />
+      <%= f.text_area :personal_profile_wiki, :style => "width: 700pt;" %>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" id="dictionary_wiki">
+    <div class="field">
+      <%= f.label :dictionary_wiki %><br />
+      <%= f.text_area :dictionary_wiki, :style => "width: 700pt;" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", :class => "btn btn-success", :id => "submit_button", :name => "wiki_button" %>
+  </div>
+<% end %>

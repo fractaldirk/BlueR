@@ -15,9 +15,6 @@ Then I should be able to edit or create competencies
     And I press "Sign up"
     Then I should see "GPI"
     And I should see "Logged in as user@ticketee.com"
-
-  Background: Creating new position
-    Given I am on the home page
     When I follow "New Position"
     Then I should see "Create a new position"
     And I fill in "Job title" with "Captain America"
@@ -29,6 +26,10 @@ Then I should be able to edit or create competencies
     And I press "Create position"
     Then I should see "GPI"
     And I should see "Captain America"
+    Given I am on the new wiki page
+    When I fill in "Job description wiki" with "Zappy"
+    And I press "Update"
+    Then I should see "Zappy"
 
       Scenario: Create competencies
         When I follow "Captain America"

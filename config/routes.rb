@@ -1,4 +1,6 @@
 BlueRobin1::Application.routes.draw do
+  resources :wikis
+
   devise_for :users
 
   resources :posts do

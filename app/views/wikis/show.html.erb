@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Competencies wiki:</b>
+  <%= @wiki.competencies_wiki %>
+</p>
+
+<p>
+  <b>Job description wiki:</b>
+  <%= @wiki.job_description_wiki %>
+</p>
+
+<p>
+  <b>Personal profile wiki:</b>
+  <%= @wiki.personal_profile_wiki %>
+</p>
+
+<p>
+  <b>Dictionary wiki:</b>
+  <%= @wiki.dictionary_wiki %>
+</p>
+
+
+<%= link_to 'Edit', edit_wiki_path(@wiki) %> |
+<%= link_to 'Back', wikis_path %>

@@ -1,0 +1,13 @@
+<div class="span1">
+
+</div>
+
+<div class="span10">
+  <h2><i>wiki</i></h2>
+  <hr />
+  <%= simple_format @wiki.job_description_wiki %>
+</div>
+
+<div class="span1">
+
+</div>

@@ -26,8 +26,13 @@ Then I should be able to edit or create competencies
     And I press "Create position"
     Then I should see "GPI"
     And I should see "Captain America"
+    Given I am on the new wiki page
+    When I fill in "Job description wiki" with "Zappy"
+    And I press "Update"
+    Then I should see "Zappy"
 
       Scenario: Create competencies
+        Given I am on the homepage
         When I follow "Captain America"
         Then I should see "Job Description"
         When I follow image link "Competencies"

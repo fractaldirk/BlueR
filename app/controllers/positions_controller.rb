@@ -92,14 +92,17 @@ class PositionsController < ApplicationController
 
   def jobdescription
     @position = Position.find(params[:id])
+    @wiki = Wiki.find(1)
   end
 
   def personalprofile
     @position = Position.find(params[:id])
+    @wiki = Wiki.find(1)
   end
 
   def competencies
     @position = Position.find(params[:id])
+    @wiki = Wiki.find(1)
   end
 
   def editjobdescription
@@ -163,6 +166,7 @@ class PositionsController < ApplicationController
 
   def dictionary
     @competencies = Competency.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_dictionary_path }
