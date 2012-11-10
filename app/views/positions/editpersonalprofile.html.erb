@@ -1,28 +1,16 @@
-<body>
-  <div id="myCarousel" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="active item">
-            <h4>Employee information (for <%= @position.job_title %>)</h4>
-            <hr />
-            <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
-            <%= link_to 'Back', personalprofile_position_path, :class => "btn btn-action", :id => "edit_button" %>
-            <%= render "form_personal_profile" %>
-          </div>
-          <div class="item">
+<div class="span1">
 
-          </div>
-          <div class="item">
+</div>
 
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
-  </div>
-</body>
+<div class="span10">
+  <h4>Employee information (for <%= @position.job_title %>)</h4>
+  <hr />
+  <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
+  <%= link_to 'Back', personalprofile_position_path, :class => "btn btn-action", :id => "edit_button" %>
+  <%= render "form_personal_profile" %>
+
+</div>
+
+<div class="span1">
+
+</div>

@@ -3,8 +3,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @search = Position.search(params[:q])
-    @positions = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

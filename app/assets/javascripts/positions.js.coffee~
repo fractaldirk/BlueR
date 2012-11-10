@@ -18,8 +18,6 @@ jQuery ->
     $('.auto_search_competency').autocomplete
       source: $('.auto_search_competency').data('autocomplete-source')
 
-
-jQuery ->
   $('.auto_search').autocomplete
     source: $('.auto_search').data('autocomplete-source')
 
@@ -28,3 +26,7 @@ jQuery ->
 
   $('.auto_search_competency').autocomplete
     source: $('.auto_search_competency').data('autocomplete-source')
+
+
+  $('.attitude').autocomplete
+    source: ["gentle", "cold"]

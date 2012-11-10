@@ -1,28 +1,16 @@
-<h1></h1>
-<body>
-  <div id="myCarousel" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="active item">
-            <h2>Identify competencies</h2>
-            <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
-            <%= link_to 'Back', competencies_position_path, :class => "btn btn-action", :id => "edit_button" %>
-            <%= render "form_competencies" %>
-          </div>
-          <div class="item">
-            <%= render "helper_competencies" %>
-          </div>
-          <div class="item">
-            <%= render "positions/wikis/form_competencies_wiki" %>
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
-  </div>
-</body>
+<div class="span1">
+
+</div>
+
+<div class="span10">
+  <h2>Identify competencies</h2>
+
+  <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
+  <%= link_to 'Back', competencies_position_path, :class => "btn btn-action", :id => "edit_button" %>
+  <%= render "form_competencies" %>
+
+</div>
+
+<div class="span1">
+
+</div>

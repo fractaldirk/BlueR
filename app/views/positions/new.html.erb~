@@ -1,22 +1,14 @@
-<body>
-  <div id="myCarousel" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="active item">
-            <h1>Create a new position <%= link_to image_tag('homepage_button.png'), positions_path %></h1>
-            <%= render 'form_general' %>
-          </div>
-          <div class="item">
-            <%= render 'positions/wikis/form_general_wiki' %>
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
-  </div>
-</body>
+<div class="span1">
+
+</div>
+
+<div class="span10">
+  <h1>Create a new position</h1>
+  <%= link_to image_tag('homepage_button.png'), positions_path, :class => 'homepage_button' %>
+  <%= render 'form_general' %>
+
+</div>
+
+<div class="span1">
+
+</div>

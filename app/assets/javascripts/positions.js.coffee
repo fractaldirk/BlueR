@@ -26,3 +26,7 @@ jQuery ->
 
   $('.auto_search_competency').autocomplete
     source: $('.auto_search_competency').data('autocomplete-source')
+
+
+  $('.attitude').autocomplete
+    source: ["Identification with Greenpeace goals and supportive of Greenpeace values", "Commitment to (to be defined)", "Autonomous/ initiative/ work independently", "Stress resistance", "(Self) motivation", "Integrative thinking", "Ensure confidentiality of information pertaining to the Database/ to Greenpeace", "Flexibility", "Positive thinking", "Willingess to learn", "Willingness to teach", "Tenacity", "Collaborative", "Enthusiasm", "Discretion and confidentiality", "Proactiveness"]
