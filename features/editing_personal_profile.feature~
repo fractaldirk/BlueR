@@ -28,3 +28,4 @@ Then I should be able to edit the job description of the position
         When I fill in "Name" with "Steve Rogers"
         When I press "Save Personal Profile"
         Then I should see "Personal profile have been successfully updated"
+        And I should see "Steve Rogers"

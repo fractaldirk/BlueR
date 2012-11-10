@@ -4,6 +4,18 @@ And I want to edit or create competencies
 When I follow an existing position
 Then I should be able to edit or create competencies
 
+
+  Background: Signing up
+    Given I am on the homepage
+    When I follow "Sign up"
+    And I fill in "Email" with "user@ticketee.com"
+    And I fill in "Password" with "password"
+    And I fill in "Password confirmation" with "password"
+    And I select "International" from "User office"
+    And I press "Sign up"
+    Then I should see "GPI"
+    And I should see "Logged in as user@ticketee.com"
+
   Background: Creating new position
     Given I am on the home page
     When I follow "New Position"
@@ -15,13 +27,13 @@ Then I should be able to edit or create competencies
     And I select "Full time (1)" from "How many FTE requires this position?"
     And I select "Permanent" from "Is this a permanent position?"
     And I press "Create position"
-    Then I should see "Listing positions"
+    Then I should see "GPI"
     And I should see "Captain America"
 
       Scenario: Create competencies
         When I follow "Captain America"
         Then I should see "Job Description"
-        When I follow image link "Personal_profile"
+        When I follow image link "Competencies"
         Then I should see "Functional competencies"
         When I follow "Edit"
         Then I should see "Identify competencies"
