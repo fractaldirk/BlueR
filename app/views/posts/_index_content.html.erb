@@ -7,8 +7,8 @@
 <div>
 <table class="table" id="knowledge_table">
   <tr>
-    <th>Idea title</th>
-    <th>Participants..</th>
+    <th>Projects</th>
+    <th>Project leaders</th>
     <th>Created at</th>
     <th>Action:</th>
   </tr>
@@ -17,9 +17,9 @@
 
   <tr>
     <td><%= link_to post.idea_title, post %> (<%= post.comments.count %>)</td>
-    <td>creator name + participants names</td>
+    <td><%= post.idea_name %></td>
     <td><%= post.created_at.strftime("%d %B %Y") %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', post, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 </div>
 <% end %>

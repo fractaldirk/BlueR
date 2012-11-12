@@ -1,7 +1,7 @@
 <legend>
 <div class="comment" data-time="<%= comment.created_at.to_i %>">
-  <strong><%= comment.idea_commenter %></strong>
-  <em><p>on <%= comment.created_at.strftime('%d %b, %Y at %I:%M %p') %></p></em>
+  <p><strong><%= comment.idea_commenter %></strong>
+  <em>on <%= comment.created_at.strftime('%d %b, %Y at %I:%M %p') %></p></em>
   <%= simple_format comment.idea_comment %>
 </div>
 <p>

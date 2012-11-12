@@ -1,72 +1,24 @@
-<div class="span1">
-
-</div>
-
-<div class="span10">
-  <%= link_to 'Edit', edit_wiki_path(@wiki), :class => "btn btn-danger", :id => "edit_button" %>
-
-  <%= link_to image_tag('homepage_button.png'), office_path , :class => 'homepage_button' %>
-
-  <h1>Listing wikis</h1>
-
-  <div class="accordion" id="accordion2">
-
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#job_description_wiki">
-          Job description
-        </a>
+<body>
+  <div id="wikis" class="carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <div class="span1">
+        <a class="carousel-control left" id="carouselleft" href="#wikis" data-slide="prev">&lsaquo;</a>
+        <br />
       </div>
-      <div id="job_description_wiki" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <%= simple_format @wiki.job_description_wiki %>
+        <div class="span10">
+          <div class="active item">
+            <%= render "index_content" %>
+          </div>
+          <div class="item">
+            <%= render "index_nav" %>
+          </div>
+          <div class="item">
+            <%= render "wiki" %>
+          </div>
         </div>
+        <div class="span1">
+        <a class="carousel-control right" id="carouselright" href="#wikis" data-slide="next">&rsaquo;</a>
       </div>
     </div>
-
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#competencies_wiki">
-          Competency profile
-        </a>
-      </div>
-      <div id="competencies_wiki" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <%= simple_format @wiki.competencies_wiki %>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#personal_profile_wiki">
-          Personal profile
-        </a>
-      </div>
-      <div id="personal_profile_wiki" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <%= simple_format @wiki.personal_profile_wiki %>
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#dictionary_wiki">
-          Dictionary
-        </a>
-      </div>
-      <div id="dictionary_wiki" class="accordion-body collapse">
-        <div class="accordion-inner">
-          <%= simple_format @wiki.dictionary_wiki %>
-        </div>
-      </div>
-    </div>
-
   </div>
-
-</div>
-
-<div class="span1">
-
-</div>
+</body>
