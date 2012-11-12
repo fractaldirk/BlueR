@@ -36,6 +36,9 @@ body {
   background-color:#006600;
   color:#FFFFFF;
   }
+  td {
+  background-color:#00CC33;
+  }
 }
 
 table, td, th {
