@@ -23,4 +23,7 @@ module PostsHelper
     current_user.user_name
   end
 
+  def creator_milestone
+    current_user.user_name
+  end
 end

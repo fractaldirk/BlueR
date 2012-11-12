@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112120335) do
+ActiveRecord::Schema.define(:version => 20121112133445) do
 
   create_table "comments", :force => true do |t|
     t.string   "idea_commenter"
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(:version => 20121112120335) do
   end
 
   add_index "m_competencies", ["position_id"], :name => "index_m_competencies_on_position_id"
+
+  create_table "milestones", :force => true do |t|
+    t.date     "finished_at"
+    t.string   "task"
+    t.integer  "post_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "creator"
+  end
+
+  add_index "milestones", ["post_id"], :name => "index_milestones_on_post_id"
 
   create_table "positions", :force => true do |t|
     t.string   "position_name"

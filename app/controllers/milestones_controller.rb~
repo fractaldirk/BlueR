@@ -1,0 +1,7 @@
+class MilestonesController < ApplicationController
+  def create
+    @post = Post.find(params[:post_id])
+    @milestone = @post.milestones.create(params[:milestone])
+    redirect_to milestones_post_path(@post)
+  end
+end

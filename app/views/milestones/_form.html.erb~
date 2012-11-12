@@ -1,0 +1,15 @@
+<h4>Add a milestone</h4>
+<%= form_for([@post, @post.milestones.build]) do |f| %>
+  <div class="field">
+    <p><b>Finished at:</b> <%= f.date_select(:finished_at, :order => [:day, :month, :year], :start_year => 2012, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }) %></p>
+  </div>
+  <div class="field">
+    <p><b>Task:</b> <%= f.text_field :task, :style => "width: 250pt" %></p>
+  </div>
+
+  <%= f.hidden_field :creator, :value => creator_milestone %>
+
+  <div class="actions">
+    <%= f.submit "Add milestone", :class => "btn btn-success" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="span1">
+
+</div>
+
+<div class="span10">
+  <h2>Manage milestones</h2>
+    <%= link_to 'Back', post_path(@post), :class => "btn", :id => "back_button" %>
+
+  <div id="milestones">
+    <%= render @post.milestones.order("milestones.finished_at desc") %>
+  </div>
+
+  <hr />
+    <% if current_user.user_name == @post.idea_name %>
+      <%= render "milestones/form" %>
+    <% end %>
+</div>
+
+<div class="span1">
+
+</div>

@@ -1,0 +1,27 @@
+<% if current_user.user_name == @post.idea_name %>
+
+<legend>
+<div class="milestone" data-time="<%= milestone.created_at.to_i %>">
+  <p><strong><%= milestone.finished_at.strftime('%d %b, %Y') %></strong>
+  <em><%= link_to 'Delete', [milestone.post, milestone],
+                 :confirm => 'Are you sure?',
+                 :method => :delete %></p></em>
+</div>
+  <p style="color: black">
+    <%= milestone.task %>
+  </p>
+</legend>
+
+
+<% else %>
+
+<legend>
+<div class="milestone" data-time="<%= milestone.created_at.to_i %>">
+  <p><strong><%= milestone.finished_at.strftime('%d %b, %Y') %></strong></p>
+</div>
+  <p style="color: black">
+    <%= milestone.task %>
+  </p>
+</legend>
+
+<% end %>

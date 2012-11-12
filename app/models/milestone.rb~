@@ -1,0 +1,4 @@
+class Milestone < ActiveRecord::Base
+attr_accessible :finished_at, :task
+belongs_to :post
+end

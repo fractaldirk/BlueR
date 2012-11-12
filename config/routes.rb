@@ -6,9 +6,11 @@ BlueRobin1::Application.routes.draw do
   resources :posts do
     member do
       get 'wiki'
+      get 'milestones'
     end
     resources :comments
     resources :projects
+    resources :milestones
   end
 
   get 'positions/newzealand' => 'positions#newzealand', :controller => "positions"

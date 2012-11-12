@@ -7,4 +7,5 @@ validates_presence_of :idea_body
 
 has_many :comments, :dependent => :destroy
 has_many :projects, :dependent => :destroy
+has_many :milestones, :dependent => :destroy
 end

@@ -1,5 +1,8 @@
 <p id="notice"></p>
-  <p>Greennet: <%= @post.tag %></p>
+  <h5><a style="color: green" href="<%= @post.tag %>">Greennet (link)</a> Next milestone:
+  <% @post.milestones.each do |milestone| %>
+    <%= milestone.finished_at %></h5>
+  <% end %>
 
   <% unless @post.comments.empty? %>
     <h2><%= pluralize(@post.comments.size, 'announcement') %> for <%= @post.idea_title %></h2>
