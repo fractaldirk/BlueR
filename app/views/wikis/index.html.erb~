@@ -7,13 +7,13 @@
       </div>
         <div class="span10">
           <div class="active item">
-            <%= render "positions/international/index_positions" %>
+            <%= render "index_content" %>
           </div>
           <div class="item">
-            <%= render "positions/international/index_nav" %>
+            <%= render "index_nav" %>
           </div>
           <div class="item">
-            <%= render "knowledge_center" %>
+            <%= render "wiki" %>
           </div>
         </div>
         <div class="span1">

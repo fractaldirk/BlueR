@@ -116,15 +116,15 @@ class PositionsController < ApplicationController
   end
 
   def editjobdescription
-    @position = Position.find(params[:id])
+     @position = Position.find(params[:id])
   end
 
   def editcompetencies
-   @position = Position.find(params[:id])
+    @position = Position.find(params[:id])
   end
 
   def editpersonalprofile
-   @position = Position.find(params[:id])
+    @position = Position.find(params[:id])
   end
 
   def newzealand
