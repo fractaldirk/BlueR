@@ -1,5 +1,6 @@
 <h2>Competencies</h2>
-
+<hr />
+<%= link_to 'Download (Excel)', competencies_position_path(format: "xls") %> |
 <hr />
 
 <table class="table table-bordered table-striped">
@@ -96,6 +97,3 @@
       </tr>
     </tbody>
 </table>
-
-<br />
-<%= link_to 'Back', @position %>

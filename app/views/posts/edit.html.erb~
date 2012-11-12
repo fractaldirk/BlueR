@@ -7,7 +7,7 @@
   <br/>
   <br/>
   <hr />
-  <%= render 'edit_form' %>
+  <%= render 'formi' %>
 
   <%= link_to 'Back', wiki_post_path(@post), :class => "btn", :id => "back_button" %>
 </div>

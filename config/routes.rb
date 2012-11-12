@@ -4,6 +4,9 @@ BlueRobin1::Application.routes.draw do
   devise_for :users
 
   resources :posts do
+    member do
+      get 'wiki'
+    end
     resources :comments
     resources :projects
   end

@@ -1,11 +1,11 @@
 <h1>Knowledge Center</h1>
 <br />
-  <%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New project', new_post_path %>
 <br />
 <br />
 
 <div>
-<table class="table">
+<table class="table" id="knowledge_table">
   <tr>
     <th>Idea title</th>
     <th>Participants..</th>

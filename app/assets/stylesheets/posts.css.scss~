@@ -4,15 +4,16 @@
 
 #comments {
   font-size: 12px;
-  background-color: #DDD;
+  background-color: #4B7399;
   padding: 0 20px;
-  width: 550px;
+  width: 775px;
   border: solid 1px #333;
 }
 
 .comment {
   border-bottom: solid 1px #999;
   margin: 15px 0;
+  color:#000;
 }
 
 .comment .author_name {
@@ -25,7 +26,7 @@
 
 #join_project_button {
   position:fixed;
-  top:125px;
+  top:91px;
   right:255px;
 }
 
@@ -36,6 +37,12 @@
 }
 
 #edit_project_button {
+  position:fixed;
+  top:90px;
+  right:330px;
+}
+
+#update_button {
   position:fixed;
   top:90px;
   right:325px;

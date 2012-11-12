@@ -12,18 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :idea_title %><br />
+    <%= f.label :idea_title, "Project name:" %><br />
     <%= f.text_field :idea_title %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :idea_name %><br />
-    <%= f.text_field :idea_name %>
+    <%= f.label :tag, "Greennet (link to project):" %><br />
+    <%= f.text_field :tag %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :idea_body %><br />
-    <%= f.text_area :idea_body %>
+    <%= f.label :idea_name, "Project leader:" %><br />
+    <%= f.text_field :idea_name, :value => project_leader %>
+  </div>
+  <br/>
+  <div class="field">
+    <%= f.label :idea_body, "Project description" %><br />
+    <%= f.text_area :idea_body, :style => "width: 700pt" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create project", :class => "btn btn-success", :id => "update_button" %>
   </div>
 <% end %>

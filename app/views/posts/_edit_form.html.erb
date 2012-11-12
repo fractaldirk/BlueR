@@ -23,7 +23,7 @@
   <br/>
   <div class="field">
     <%= f.label :idea_name, "Project leader:" %><br />
-    <%= f.text_field :idea_name, :value => project_leader %>
+    <%= f.text_field :idea_name %>
   </div>
   <br/>
   <div class="field">
@@ -31,6 +31,6 @@
     <%= f.text_area :idea_body, :style => "width: 700pt" %>
   </div>
   <div class="actions">
-    <%= f.submit "Create project", :class => "btn btn-success", :id => "update_button" %>
+    <%= f.submit "Update", :class => "btn btn-success", :id => "update_button", :name => "wiki_button" %>
   </div>
 <% end %>

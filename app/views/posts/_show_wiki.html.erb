@@ -1,0 +1,13 @@
+<h2>Wiki</h2>
+
+<hr />
+  <%= render 'projects/participants' %>
+
+  <% unless @post.projects.name == current_user.user_name %>
+    <%= render 'projects/form' %>
+  <% end %>
+
+<hr />
+  <p>
+    <%= simple_format @post.idea_body %>
+  </p>

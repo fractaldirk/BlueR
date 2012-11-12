@@ -93,6 +93,11 @@ class PositionsController < ApplicationController
   def jobdescription
     @position = Position.find(params[:id])
     @wiki = Wiki.find(1)
+
+    respond_to do |format|
+      format.html { render html: jobdescription_position_path }
+      format.doc
+    end
   end
 
   def personalprofile
@@ -103,6 +108,11 @@ class PositionsController < ApplicationController
   def competencies
     @position = Position.find(params[:id])
     @wiki = Wiki.find(1)
+
+    respond_to do |format|
+      format.html { render html: competencies_position_path }
+      format.xls
+    end
   end
 
   def editjobdescription

@@ -1,5 +1,5 @@
 <h2>Job Description</h2>
-
+<%= link_to 'Download (Word)', jobdescription_position_path(format: "doc"), :class => "download_button" %>
 
 <fieldset>
   <dl class="dl-horizontal">

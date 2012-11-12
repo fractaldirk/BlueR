@@ -1,0 +1,23 @@
+<div class="span1">
+
+</div>
+
+<div class="span10">
+
+  <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-danger", :id => "edit_project_button" %>
+
+  <%= link_to 'Back', @post, :class => "btn", :id => "back_button" %>
+
+  <h2><%= @post.idea_title %> wiki</h2>
+  <h5><a href="<%= @post.tag %>">Greennet (link)</a></h5>
+
+  <hr />
+    <p>
+      <%= simple_format @post.idea_body %>
+    </p>
+
+</div>
+
+<div class="span1">
+
+</div>
