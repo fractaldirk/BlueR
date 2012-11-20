@@ -1,7 +1,5 @@
 <h1>GPI positions(<%= Position.count(:conditions => "office = 1") %>)</h1>
 
-<%= render 'positions/international/index_dropdown' %><br />
-
 <%= link_to 'New Position', new_position_path %>
 <hr />
 <%= search_form_for @search, url: positions_international_path do |f| %>
@@ -25,16 +23,18 @@
     <th><%= sort_link @search, :department, "Department" %></th>
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
     <th>Status</th>
+    <th>JD</th>
     <th>Edit</th>
     <th>Destroy</th>
   </tr>
     <% @positions.each do |position| %>
       <% if position.office == 1 %>
   <tr>
-    <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
+    <td><%= link_to position.job_title, "#", :rel => "popover", "data-trigger" => "click","data-content" => "#{render "positions/international/index_apps", :position => position}" %></td>
     <td><%= position.department %></td>
     <td><%= position.valid_from.strftime("%d %B %Y") unless position.valid_from.nil? %></td>
     <td><%= position.status %></td>
+    <td><a href="#JDModal" role="button" class="btn btn-primary" data-toggle="modal">JD</a></td>
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

@@ -23,16 +23,18 @@
     <th><%= sort_link @search, :department, "Department" %></th>
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
     <th>Status</th>
+    <th>JD</th>
     <th>Edit</th>
     <th>Destroy</th>
   </tr>
     <% @positions.each do |position| %>
       <% if position.office == 1 %>
   <tr>
-    <td><%= link_to position.job_title, jobdescription_position_path(position) %></td>
+    <td><%= link_to position.job_title, "#", :rel => "popover", "data-trigger" => "click","data-content" => "#{render "positions/international/index_apps", :position => position}" %></td>
     <td><%= position.department %></td>
     <td><%= position.valid_from.strftime("%d %B %Y") unless position.valid_from.nil? %></td>
     <td><%= position.status %></td>
+    <td><%= link_to 'JD', editjobdescription_position_path(position), :class => 'btn btn-primary' %></td>
     <td><%= link_to 'Edit', edit_position_path(position) %></td>
     <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

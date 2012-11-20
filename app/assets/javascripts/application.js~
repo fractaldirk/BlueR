@@ -15,3 +15,32 @@
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require_tree .
+
+var isVisible = false;
+var clickedAway = false;
+
+$('.popup-marker').each(function() {
+    $(this).popover({
+        html: true,
+        trigger: 'manual'
+    }).click(function(e) {
+        $(this).popover('show');
+        isVisible = true;
+        //e.preventDefault();
+    });
+});
+
+$(document).click(function(e) {
+  if(isVisible & clickedAway)
+  {
+     $('.popup-marker').each(function() {
+          $(this).popover('hide');
+     });
+    isVisible = clickedAway = false;
+  }
+  else
+  {
+    clickedAway = true;
+  }
+});
+​

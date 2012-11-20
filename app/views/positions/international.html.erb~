@@ -1,24 +1,26 @@
-<body id="jobdescription" onload="">
-  <div id="myCarousel" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="active item">
-            <%= render "positions/international/index_positions" %>
-          </div>
-          <div class="item">
-            <%= render "positions/international/index_nav" %>
-          </div>
-          <div class="item">
-            <%= render "knowledge_center" %>
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#myCarousel" data-slide="next">&rsaquo;</a>
-      </div>
-    </div>
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn btn-warning" data-toggle="modal">Help</a>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Wiki</h3>
   </div>
-</body>
+  <div class="modal-body">
+    <p><%= render "wikis/index" %></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+<a href="#" class="btn" rel="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="Popover on right">Popover on right</a>
+
+<div class="bs-docs-example" style="padding-bottom: 24px;">
+          <a href="#" class="btn btn-large btn-danger" rel="popover" data-trigger="click" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="Choose your app">Click to toggle popover</a>
+</div>
+
+<%= render "positions/international/index_positions" %>
+
+<%= render "positions/international/index_nav" %>

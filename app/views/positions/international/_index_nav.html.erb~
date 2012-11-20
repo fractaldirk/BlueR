@@ -1,6 +1,13 @@
 <div class="span2">
   <frameset>
-    <%= link_to image_tag("dictionary.jpg"), positions_dictionary_path %>
+
     <h4>Dictionary</h4>
+  </fameset>
+</div>
+
+<div class="span2">
+  <frameset>
+
+    <h4>Wiki</h4>
   </fameset>
 </div>

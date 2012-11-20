@@ -1,0 +1,20 @@
+<% @positions.each do |position| %>
+  <% if position.office == 1 %>
+
+<fieldset>
+  <dl class="dl-horizontal">
+    <dt><strong>Job title:</strong></dt>
+    <dd><strong><%= position.job_title %></strong></dd>
+    <dt>Valid from:</dt>
+    <dd><%= position.valid_from %></dd>
+    <dt>Job grade:</dt>
+    <dd><%= position.job_grade %></dd>
+    <dt>Reports to:</dt>
+    <dd><%= position.reports_to %></dd>
+    <dt>Line manages:</dt>
+    <dd><%= position.line_manages %></dd>
+  </dl>
+</fieldset>
+
+  <% end %>
+<% end %>

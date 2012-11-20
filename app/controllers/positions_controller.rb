@@ -131,6 +131,7 @@ class PositionsController < ApplicationController
     @search = Position.search(params[:q])
     @positions = @search.result
     @posts = Post.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_newzealand_path }
@@ -143,6 +144,7 @@ class PositionsController < ApplicationController
     @search = Position.search(params[:q])
     @positions = @search.result
     @posts = Post.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_international_path }
@@ -154,6 +156,7 @@ class PositionsController < ApplicationController
     @search = Position.search(params[:q])
     @positions = @search.result
     @posts = Post.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_unitedkingdom_path }
@@ -166,6 +169,7 @@ class PositionsController < ApplicationController
     @search = Position.search(params[:q])
     @positions = @search.result
     @posts = Post.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_netherlands_path }
@@ -202,6 +206,7 @@ class PositionsController < ApplicationController
     @search = Position.search(params[:q])
     @positions = @search.result
     @posts = Post.all
+    @wiki = Wiki.find(1)
 
     respond_to do |format|
       format.html { render html: positions_livescreen_path }

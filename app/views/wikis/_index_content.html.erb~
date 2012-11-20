@@ -60,13 +60,13 @@
 
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#wiki_wiki">
-        Wiki
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#index_wiki">
+        Index
       </a>
     </div>
-    <div id="wiki_wiki" class="accordion-body collapse">
+    <div id="index_wiki" class="accordion-body collapse">
       <div class="accordion-inner">
-        <%= simple_format @wiki.wiki_wiki %>
+        <%= simple_format @wiki.dictionary_wiki %>
       </div>
     </div>
   </div>

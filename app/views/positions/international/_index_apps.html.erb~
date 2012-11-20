@@ -1,0 +1,12 @@
+<frameset>
+  <%= link_to image_tag("job_description2.jpg"), jobdescription_position_path(position) %>
+  <h4>Job Description</h4>
+
+
+  <%= link_to image_tag("competencies.jpg"), competencies_position_path(position) %>
+  <h4>Competencies</h4>
+
+
+  <%= link_to image_tag("personal_profile.jpg"), personalprofile_position_path(position) %>
+  <h4>Personal Profile</h4>
+</frameset>
