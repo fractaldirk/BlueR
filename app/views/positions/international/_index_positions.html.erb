@@ -1,21 +1,25 @@
+<br/>
+<br/>
 <h1>GPI positions(<%= Position.count(:conditions => "office = 1") %>)</h1>
-
-<%= link_to 'New Position', new_position_path %>
-<hr />
+<br/>
+<br/>
+<%= link_to 'New Position', new_position_path, :class => 'btn btn-inverse', :style => "color: white" %>
+<br/>
+<br/>
 <%= search_form_for @search, url: positions_international_path do |f| %>
 <div>
   <table class="search_table">
     <tr>
-      <td style="width: 100pt"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:job_title).uniq} %></td>
+      <td style="width: 100pt; padding:15px"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:job_title).uniq} %></td>
       <td><%= f.text_field :name_cont, :class => 'auto_search_name', :placeholder => 'Name', data: { autocomplete_source: Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:name).uniq} %></td>
-      <td><%= f.select(:department_cont, Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:department).uniq, :prompt => "Department") %></td>
+      <td><%= f.select(:department_cont, Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:department).uniq, :prompt => "Choose Department", :include_blank => true ) %></td>
       <td><div class="action"><%= link_to_submit image_tag('search.jpg') %></div></td>
     </tr>
   </table>
 </div>
 <% end %>
 
-<hr />
+
 
 <table class="table table-hover">
   <tr>
@@ -24,19 +28,21 @@
     <th><%= sort_link @search, :valid_from, "Valid from" %></th>
     <th>Status</th>
     <th>JD</th>
-    <th>Edit</th>
-    <th>Destroy</th>
+    <th>CP</th>
+    <th>PP</th>
+    <th>Action</th>
   </tr>
     <% @positions.each do |position| %>
       <% if position.office == 1 %>
   <tr>
-    <td><%= link_to position.job_title, "#", :rel => "popover", "data-trigger" => "click","data-content" => "#{render "positions/international/index_apps", :position => position}" %></td>
+    <td><%= position.job_title %></td>
     <td><%= position.department %></td>
     <td><%= position.valid_from.strftime("%d %B %Y") unless position.valid_from.nil? %></td>
     <td><%= position.status %></td>
-    <td><%= link_to 'JD', editjobdescription_position_path(position), :class => 'btn btn-primary' %></td>
-    <td><%= link_to 'Edit', edit_position_path(position) %></td>
-    <td><%= link_to 'Destroy', position, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'JD', jobdescription_position_path(position), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'CP', competencies_position_path(position), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'PP', personalprofile_position_path(position), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'GO', "#", :rel => "popover", "data-trigger" => "click","data-content" => "#{render "positions/international/index_apps", :position => position}", :class => 'btn btn-warning' %></td>
   </tr>
       <% end %>
     <% end %>
