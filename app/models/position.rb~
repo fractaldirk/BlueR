@@ -25,12 +25,17 @@ def permanent_outcome
   end
 end
 
-def self.to_csv
-  CSV.generate do |csv|
-    csv << collumn_names
-    all.each do |competency|
-      csv << competency.attributes.values_at(*collumn_names)
-    end
+def office_name
+  if @position.office == 1
+    "Greenpeace International"
+  elsif @position.office == 2
+    "Greenpeace United Kingdom"
+  elsif @position.office == 3
+    "Greenpeace Netherlands"
+  elsif @position.office == 4
+    "Greenpeace New Zealand"
+  else
+    "Unidentified"
   end
 end
 

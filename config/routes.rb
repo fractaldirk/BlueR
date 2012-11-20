@@ -1,5 +1,9 @@
 BlueRobin1::Application.routes.draw do
-  resources :wikis
+  resources :wikis do
+    member do
+      get 'editdictionary'
+    end
+  end
 
   devise_for :users
 
@@ -28,6 +32,7 @@ BlueRobin1::Application.routes.draw do
         get 'editjobdescription'
         get 'editcompetencies'
         get 'editpersonalprofile'
+        get 'recruitment'
       end
   end
 

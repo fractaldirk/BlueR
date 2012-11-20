@@ -63,6 +63,9 @@ class WikisController < ApplicationController
         if params[:wiki_button]
           format.html { redirect_to wikis_path, notice: 'Wiki was successfully updated.' }
           format.json { head :no_content }
+        elsif params[:update_dictionary_button]
+          format.html { redirect_to positions_dictionary_path, notice: 'Dictionary page was successfully updated'}
+          format.json { head :no_content }
         else
           format.html { redirect_to @wiki, notice: 'Wiki was successfully updated.' }
           format.json { head :no_content }
@@ -84,5 +87,9 @@ class WikisController < ApplicationController
       format.html { redirect_to wikis_url }
       format.json { head :no_content }
     end
+  end
+
+  def editdictionary
+    @wiki = Wiki.find(params[:id])
   end
 end

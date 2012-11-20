@@ -213,4 +213,15 @@ class PositionsController < ApplicationController
       format.json { render json: positions_livescreen_path }
     end
   end
+
+  def recruitment
+    @position = Position.find(params[:id])
+    @wiki = Wiki.find(1)
+
+    respond_to do |format|
+      format.html { render html: jobdescription_position_path }
+      format.doc
+      format.xls
+    end
+  end
 end

@@ -1,11 +1,16 @@
 BlueRobin1::Application.routes.draw do
-  resources :wikis
+  resources :wikis do
+    member do
+      get 'editdictionary'
+    end
+  end
 
   devise_for :users
 
   resources :posts do
     member do
       get 'wiki'
+      get 'milestones'
     end
     resources :comments
     resources :projects
@@ -27,6 +32,7 @@ BlueRobin1::Application.routes.draw do
         get 'editjobdescription'
         get 'editcompetencies'
         get 'editpersonalprofile'
+        get 'interviewquestions'
       end
   end
 

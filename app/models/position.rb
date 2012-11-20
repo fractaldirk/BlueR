@@ -25,4 +25,18 @@ def permanent_outcome
   end
 end
 
+def office_name
+  if office == 1
+    "Greenpeace International"
+  elsif office == 2
+    "Greenpeace United Kingdom"
+  elsif office == 3
+    "Greenpeace Netherlands"
+  elsif office == 4
+    "Greenpeace New Zealand"
+  else
+    "Unidentified"
+  end
+end
+
 end

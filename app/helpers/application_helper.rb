@@ -25,4 +25,5 @@ module ApplicationHelper
       positions_livescreen_path
     end
   end
+
 end

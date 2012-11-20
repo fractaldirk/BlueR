@@ -1,25 +1,19 @@
-<body>
-  <div id="dictionary" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="span1">
-        <a class="carousel-control left" id="carouselleft" href="#dictionary" data-slide="prev">&lsaquo;</a>
-        <br />
-      </div>
-        <div class="span10">
-          <div class="active item">
-            <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
-            <%= render "positions/dictionaries/index_dictionary" %>
-          </div>
-          <div class="item">
-            <%= render "positions/dictionaries/dictionary_nav" %>
-          </div>
-          <div class="item">
-            <%= render "positions/wikis/dictionary_wiki" %>
-          </div>
-        </div>
-        <div class="span1">
-        <a class="carousel-control right" id="carouselright" href="#dictionary" data-slide="next">&rsaquo;</a>
-        </div>
-    </div>
-  </div>
-</body>
+<div class="span1">
+  <br/>
+</div>
+
+<div class="span10">
+
+  <%= link_to image_tag('homepage_button.png'), office_path, :class => 'homepage_button' %>
+  <%= link_to 'Edit', editdictionary_wiki_path, :class => 'btn btn-danger', :id => 'edit_button' %>
+
+  <%= render "positions/dictionaries/index_dictionary" %>
+
+
+  <%= render "wikis/dictionary" %>
+
+</div>
+
+<div class="span1">
+  <br/>
+</div>

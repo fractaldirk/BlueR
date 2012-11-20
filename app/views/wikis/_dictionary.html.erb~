@@ -1,13 +1,2 @@
-<div class="span1">
-
-</div>
-
-<div class="span10">
-  <h2><i>wiki</i></h2>
-  <hr />
-  <%= simple_format @wiki.dictionary_wiki %>
-</div>
-
-<div class="span1">
-
-</div>
+<hr />
+<%= simple_format @wiki.dictionary_wiki %>
