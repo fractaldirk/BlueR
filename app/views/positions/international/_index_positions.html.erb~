@@ -12,7 +12,7 @@
     <tr>
       <td style="width: 100pt; padding:15px"><%= f.text_field :job_title_cont, :class => 'auto_search', :placeholder => 'Job title', data: { autocomplete_source: Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:job_title).uniq} %></td>
       <td><%= f.text_field :name_cont, :class => 'auto_search_name', :placeholder => 'Name', data: { autocomplete_source: Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:name).uniq} %></td>
-      <td><%= f.select(:department_cont, Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:department).uniq, :prompt => "Department", :include_blank => true ) %></td>
+      <td><%= f.select(:department_cont, Position.order(:office).where("office = 1", "%#{params[:term]}%").map(&:department).uniq, :prompt => "Choose Department", :include_blank => true ) %></td>
       <td><div class="action"><%= link_to_submit image_tag('search.jpg') %></div></td>
     </tr>
   </table>

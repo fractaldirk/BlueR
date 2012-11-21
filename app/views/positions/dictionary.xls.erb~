@@ -4,6 +4,38 @@
   xmlns:x="urn:schemas-microsoft-com:office:excel"
   xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
   xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Info">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">PROFICIENCY LEVELS</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">The proficiency scale describes an individual’s level of expertise in a particular competency.</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">It describes the degree to which an employee possesses a competency.</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Each level in the proficiency scale has a detailed description to help identify an employee’s level of proficiency.</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">All 3 types of competencies are segregated into 4 proficiency levels:</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">- Beginner</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">- Basic</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">- Intermediate</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">- Advanced</Data></Cell>
+      </Row>
+    </Table>
+  </Worksheet>
+
   <Worksheet ss:Name="All">
     <Table>
       <Row>

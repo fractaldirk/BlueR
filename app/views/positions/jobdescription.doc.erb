@@ -1,18 +1,20 @@
 <h2>Job Description for <%= @position.office_name %></h2>
 
 <fieldset>
-  <dl class="dl-horizontal">
-    <dt><strong>Job title:</strong></dt>
-    <dd><strong><%= @position.job_title %></strong></dd>
-    <dt>Valid from:</dt>
-    <dd><%= @position.valid_from.strftime("%d %B %Y") unless @position.valid_from.nil? %></dd>
-    <dt>Job grade:</dt>
-    <dd><%= @position.job_grade %></dd>
-    <dt>Reports to:</dt>
-    <dd><%= @position.reports_to %></dd>
-    <dt>Line manages:</dt>
-    <dd><%= @position.line_manages %></dd>
-  </dl>
+  <table>
+    <dl class="dl-horizontal">
+      <dt><strong>Job title:</strong></dt>
+      <dd><strong><%= @position.job_title %></strong></dd>
+      <dt>Valid from:</dt>
+      <dd><%= @position.valid_from.strftime("%d %B %Y") unless @position.valid_from.nil? %></dd>
+      <dt>Job grade:</dt>
+      <dd><%= @position.job_grade %></dd>
+      <dt>Reports to:</dt>
+      <dd><%= @position.reports_to %></dd>
+      <dt>Line manages:</dt>
+      <dd><%= @position.line_manages %></dd>
+    </dl>
+  </table>
 </fieldset>
 
 <hr />
@@ -56,8 +58,9 @@
   </ul>
 <br />
 
+
   <b><u>Job related competencies</u></b>
-  <% for competency in @position.competencies %>
+    <% for competency in @position.competencies %>
     <ul>
       <li><%=h competency.competencies %></li>
     </ul>

@@ -57,9 +57,3 @@ h1 {
 .login {
   background-image:url("eagle.png")
 }
-
-#wikis_button {
-  position:fixed;
-  top:71px;
-  right:305px;
-}
